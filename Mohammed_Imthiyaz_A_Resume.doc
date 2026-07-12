@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohammed Imthiyaz A - Resume</title>
+<style>
+  @page { margin: 0.75in; size: A4; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Calibri', 'Segoe UI', sans-serif; font-size: 10.5pt; line-height: 1.4; color: #2D2D2D; }
+  .header { text-align: center; border-bottom: 2px solid #0D7377; padding-bottom: 12px; margin-bottom: 16px; }
+  .name { font-size: 22pt; font-weight: bold; color: #0D7377; letter-spacing: 1px; }
+  .title { font-size: 11pt; color: #E8505B; margin-top: 4px; }
+  .contact { font-size: 9.5pt; color: #555; margin-top: 6px; }
+  .contact a { color: #555; text-decoration: none; }
+  h2 { font-size: 12pt; color: #0D7377; border-bottom: 1.5px solid #0D7377; padding-bottom: 4px; margin-top: 16px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+  h3 { font-size: 11pt; color: #2D2D2D; margin-top: 10px; margin-bottom: 2px; }
+  .subtitle { font-size: 10pt; color: #E8505B; font-style: italic; margin-bottom: 4px; }
+  .meta { font-size: 9.5pt; color: #666; margin-bottom: 6px; }
+  ul { margin-left: 18px; margin-bottom: 8px; }
+  li { margin-bottom: 3px; }
+  .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 20px; margin-bottom: 8px; }
+  .skill-item { font-size: 10pt; }
+  .skill-label { font-weight: bold; color: #0D7377; }
+  .section { margin-bottom: 12px; }
+  .project-tech { font-size: 9pt; color: #888; margin-bottom: 4px; }
+  p { margin-bottom: 6px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="name">MOHAMMED IMTHIYAZ A</div>
+  <div class="title">Quality Analyst & Business Analysis Specialist | Healthcare IT Solution Specialist</div>
+  <div class="contact">
+    Hyderabad, India | <a href="mailto:Imthiyazzilaan@gmail.com">Imthiyazzilaan@gmail.com</a> | +91-8695067338 | <a href="https://linkedin.com/in/mohammed-imthiyaz-a-63266446/">linkedin.com/in/mohammed-imthiyaz-a-63266446/</a>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Professional Summary</h2>
+  <p>Accomplished Quality Analyst & Business Analysis professional with 10 years of specialized expertise in healthcare domain software solutions. Demonstrated excellence in delivering mission-critical Hospital Management Systems (HMS) to 150+ clients globally, with deep proficiency across entire software development lifecycle. Unique combination of QA expertise, business analysis acumen, and healthcare domain knowledge enables effective collaboration between clinical stakeholders, development teams, and business leadership. Proven track record in designing and implementing comprehensive quality strategies, managing complex healthcare projects in Agile environments, and driving continuous improvement in healthcare IT solutions.</p>
+</div>
+
+<div class="section">
+  <h2>Core Competencies & Expertise</h2>
+  <div class="skills-grid">
+    <div class="skill-item"><span class="skill-label">Quality Analysis (QA):</span> Smoke Testing | Functional Testing | Integration Testing | System Testing | UAT | Regression Testing | Exploratory Testing | Test Case Design | Defect Management | Test Summary Reports</div>
+    <div class="skill-item"><span class="skill-label">Business Analysis (BA):</span> Requirements Gathering | Specification Documentation | Prototyping | Figma Wireframing | Draw.io Wireframing | Scrum Process | Client Liaison | Stakeholder Management | RTM Documentation | Traceability Matrix</div>
+    <div class="skill-item"><span class="skill-label">Healthcare Domain:</span> Hospital Management Systems (HMS) | Patient Information Systems | Hospital Operations | Clinical Workflows | Healthcare Billing | Multi-tenant Architecture | Compliance & Audit</div>
+    <div class="skill-item"><span class="skill-label">Database & Cloud:</span> Basic SQL Queries | MySQL | Google Cloud Platform (Basic) | VPS Deployment | Basic Linux Commands for Daily Tasks</div>
+    <div class="skill-item"><span class="skill-label">Application Servers:</span> Tomcat Configuration | Service Engine Setup | Basic Level Operations | IIS Basic Operations | Windows Server Basic Operations</div>
+    <div class="skill-item"><span class="skill-label">Tools & Platforms:</span> Defect Tracking Systems | Test Management Tools | Jira | Confluence | PowerBI (Basic Data Analytics) | MS Office Suite</div>
+    <div class="skill-item"><span class="skill-label">AI & Automation:</span> Python Automation | Browser Automation | Spark AI | Text-to-SQL AI | Augnito Voice-to-Text</div>
+    <div class="skill-item"><span class="skill-label">Core Strengths:</span> Team Management | Mentoring | Client Communication | Process Documentation | Deployment Management | Knowledge Transfer | Low-code/No-code Tools</div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Professional Experience</h2>
+
+  <h3>Senior Software Engineer & Quality Analyst Lead</h3>
+  <div class="subtitle">KAMINENI HOSPITALS PRIVATE LIMITED, Hyderabad | Apr 2023 – Present (3+ Years)</div>
+  <ul>
+    <li>Lead quality analysis and business analysis for WHIS (Web-based Hospital Information System) serving 7+ Kamineni Hospital locations with multi-tenant architecture</li>
+    <li>Oversee comprehensive testing strategies including smoke, functional, integration, system, and UAT testing across all healthcare modules ensuring zero-defect production releases</li>
+    <li>Direct major system enhancements: EMR, MRD/MCI module, Patient Portal, Dashboards & Reports, Mobile App, Kiosk development, Tally Integration, LIS & PACS Integration, SMS & WhatsApp Integration</li>
+    <li>Lead implementation of Spark AI - AI-based Radiology Reports Generation on Voice and Keywords for clinical efficiency and paperless operations</li>
+    <li>Facilitate daily client interactions and scrum meetings, ensuring seamless communication between hospital stakeholders, clinical teams, and development teams</li>
+    <li>Managed incidents, service requests, and workflow using Odoo Ticketing System</li>
+    <li>Lead Knowledge Transfer (KT) sessions and mentoring of new team members on healthcare domain knowledge, project architecture, and quality standards</li>
+  </ul>
+
+  <h3>Senior Quality Analyst & Business Analyst</h3>
+  <div class="subtitle">IDEAS2IT TECHNOLOGIES PRIVATE LIMITED, Chennai | Jul 2016 – Mar 2023 (6 Years 9 Months)</div>
+  <ul>
+    <li>Led comprehensive quality analysis initiatives for IdeaMed (Hospital Management System) with 150+ implementations globally across 20+ major modules and 300+ screens</li>
+    <li>Executed end-to-end business analysis activities including requirements gathering, specification documentation, prototyping, and client approval processes</li>
+    <li>Conducted rigorous testing across all healthcare workflows: appointment booking, patient management, follow-up tracking, billing, and comprehensive reporting</li>
+    <li>Managed complete software deployment lifecycle including pre-release requisites, production releases, and infrastructure setup across Linux and cloud environments</li>
+    <li>Conducted exploratory testing using test charters and prepared detailed test summary and STCM reports ensuring comprehensive test coverage and traceability</li>
+    <li>Designed production infrastructure solutions and performed application factory deployments to support global multi-currency, multi-timezone, and multi-tenant healthcare operations</li>
+    <li>Collaborated with development teams on project tracking and deliverable management; created RTM (Requirement Traceability Matrix) reports for production releases</li>
+    <li>Used GoodDay Ticketing System for task tracking, defect management, and sprint execution in Agile (Scrum) methodology</li>
+    <li>Prepared data analytics reports and conducted quarterly P&L analysis for revenue tracking and business insights</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Key Projects & Achievements</h2>
+
+  <h3>IdeaMed - Hospital Management System (HMS)</h3>
+  <div class="project-tech">Product Type: Web-based HMS | Tech Stack: MySQL, Tomcat, Jasperserver, Radaptive | Team Size: 10 | Duration: Jul 2016 - Mar 2023</div>
+  <ul>
+    <li>Delivered industry-leading HMS solution compatible with single-specialty, multi-specialty, and medical college hospitals with 150+ global implementations</li>
+    <li>Ensured enterprise-grade quality managing 20+ major modules, 300+ screens, and 150+ reports with comprehensive test coverage and zero critical production defects</li>
+    <li>Enabled global scalability with multi-currency, multi-timezone, and multi-tenant support sharing common database infrastructure across 'N' branch locations</li>
+    <li>Architected and deployed healthcare solutions across diverse infrastructure: Ubuntu/Linux and cloud environments</li>
+  </ul>
+
+  <h3>WHIS - Hospital Information System with AI Integration</h3>
+  <div class="project-tech">Product Type: Web-based In-house HMS | Tech Stack: MySQL, SQL, Tomcat, IIS | Team Size: 15 | Duration: Apr 2023 - Present | Locations: 7 Kamineni Hospital Branches</div>
+  <ul>
+    <li>Led quality analysis and business analysis for comprehensive HMS solution serving 7+ hospital locations with multi-tenant shared database architecture</li>
+    <li>Managed major system enhancements: MRD/MCI module, EMR (Electronic Medical Records), Patient Portal, Advanced Dashboards & Reports, Mobile App, and Kiosk development</li>
+    <li>Implemented enterprise integrations: Tally (Accounting), LIS (Laboratory Information System), PACS (Picture Archiving and Communication System), and SMS/WhatsApp solutions for paperless operations</li>
+    <li>Designed and deployed Spark AI - AI-based Radiology Reports Generation leveraging Voice and Keywords for automated clinical documentation</li>
+    <li>Ensured healthcare compliance and operational excellence across 10+ major modules, 100+ screens, and 50+ reports specifically tailored for Indian healthcare standards</li>
+  </ul>
+
+  <h3>Python AI Automation</h3>
+  <div class="project-tech">Type: Self-developed | Tech Stack: Python, PyCharm, AI, Browser Automation</div>
+  <ul>
+    <li>Self-developed Python automation using AI for browser automation to create master data into healthcare applications</li>
+    <li>Reduces manual data entry and speeds up setup for new hospital deployments</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Technical Skills & Expertise</h2>
+  <div class="skills-grid">
+    <div class="skill-item"><span class="skill-label">Database Management:</span> MySQL | Basic SQL Queries | SQL Server Basics | Text-to-SQL AI | SQL AI</div>
+    <div class="skill-item"><span class="skill-label">Server Platforms:</span> Tomcat Configuration | Service Engine Setup (Basic Level) | IIS Basic Operations | Windows Server Basic Operations</div>
+    <div class="skill-item"><span class="skill-label">Cloud & Deployment:</span> Google Cloud Platform (Basic) | VPS Environment | Linux - Basic Commands for Daily Tasks</div>
+    <div class="skill-item"><span class="skill-label">Testing & QA Tools:</span> Manual Testing | Defect Tracking Systems | Test Management Tools | Test Reporting | Figma | Draw.io | GoodDay | Odoo | Jira | Confluence</div>
+    <div class="skill-item"><span class="skill-label">AI & Automation:</span> Python Automation | Browser Automation | Spark AI | Text-to-SQL | Augnito Voice-to-Text</div>
+    <div class="skill-item"><span class="skill-label">Business Intelligence:</span> PowerBI (Basic Data Analytics) | Data Analytics Reporting | P&L Analysis</div>
+    <div class="skill-item"><span class="skill-label">Office & Collaboration:</span> MS Office Suite | Email & Communication Tools</div>
+    <div class="skill-item"><span class="skill-label">Learning & Adaptability:</span> Quick Learner | Low-code/No-code Tools | Easy Implementation of New Technologies</div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Unique Value Proposition</h2>
+  <ul>
+    <li><strong>Comprehensive Healthcare Expertise:</strong> 10 years in healthcare IT with deep quality analysis and business analysis capabilities, enabling complete understanding of healthcare solutions from both technical and operational perspectives</li>
+    <li><strong>End-to-End Project Experience:</strong> Extensive experience spanning 150+ HMS implementations globally, diverse hospital types, and complex multi-tenant architectures serving single-specialty, multi-specialty, and medical college hospitals</li>
+    <li><strong>Quality Excellence Track Record:</strong> Proven ability to deliver zero-defect production releases for mission-critical healthcare systems supporting hundreds of hospitals and thousands of patient interactions daily</li>
+    <li><strong>AI & Modern Healthcare Technology:</strong> Hands-on experience implementing Spark AI for radiology reports, voice-to-text conversion (Augnito), and intelligent healthcare automation</li>
+    <li><strong>Enterprise Integration Expertise:</strong> Deep knowledge of integrating critical healthcare systems: Tally, LIS, PACS, SMS/WhatsApp, ensuring paperless and efficient operations</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Education</h2>
+  <h3>Bachelor of Engineering (B.E.)</h3>
+  <p><strong>Specialization:</strong> Electronics and Communication Engineering</p>
+  <p><strong>College:</strong> C. Abdul Hakeem College of Engineering and Technology</p>
+</div>
+
+<div class="section">
+  <h2>Professional Interests</h2>
+  <p>Healthcare IT Innovation | Emerging Medical Technologies | AI in Healthcare | Cloud-based Solutions | Data-Driven Healthcare Operations | Blockchain | Web3 | OpenCode AI</p>
+</div>
+
+</body>
+</html>

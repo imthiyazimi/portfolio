@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowDown, Linkedin, Github, Mail } from "lucide-react";
 import { CONTACT } from "@/lib/constants";
@@ -149,10 +150,13 @@ export default function Hero() {
             <div className="relative">
               {/* Profile photo */}
               <div className="relative z-10 overflow-hidden rounded-2xl shadow-2xl">
-                <img
+                <Image
                   src="/images/profile.png"
                   alt="Mohammed Imthiyaz A"
-                  className="h-[480px] w-auto object-cover"
+                  width={400}
+                  height={480}
+                  className="object-cover"
+                  priority
                 />
                 {/* Subtle teal overlay at bottom */}
                 <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-teal-deep/20 to-transparent" />

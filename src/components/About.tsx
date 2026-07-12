@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import AnimatedSection from "./AnimatedSection";
 
 export default function About() {
@@ -68,9 +69,11 @@ export default function About() {
               <div className="rounded-2xl bg-offwhite p-8 lg:p-10">
                 {/* Profile photo */}
                 <div className="overflow-hidden rounded-xl shadow-lg">
-                  <img
+                  <Image
                     src="/images/profile.png"
                     alt="Mohammed Imthiyaz A"
+                    width={600}
+                    height={800}
                     className="aspect-[3/4] w-full object-cover object-center"
                   />
                 </div>
