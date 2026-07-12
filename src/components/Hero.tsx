@@ -139,181 +139,33 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Right: Visual */}
+          {/* Right: Photo */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="relative hidden lg:block"
+            className="relative hidden lg:flex lg:justify-center lg:items-center"
           >
             <div className="relative">
-              {/* Abstract hospital system illustration */}
-              <svg
-                viewBox="0 0 500 500"
-                className="h-auto w-full"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {/* Central node */}
-                <circle cx="250" cy="250" r="60" fill="#0D7377" opacity="0.15" />
-                <circle cx="250" cy="250" r="40" fill="#0D7377" opacity="0.25" />
-                <circle cx="250" cy="250" r="20" fill="#0D7377" />
+              {/* Profile photo */}
+              <div className="relative z-10 overflow-hidden rounded-2xl shadow-2xl">
+                <img
+                  src="/images/profile.png"
+                  alt="Mohammed Imthiyaz A"
+                  className="h-[480px] w-auto object-cover"
+                />
+                {/* Subtle teal overlay at bottom */}
+                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-teal-deep/20 to-transparent" />
+              </div>
 
-                {/* Cross symbol in center */}
-                <rect x="245" y="235" width="10" height="30" rx="2" fill="white" />
-                <rect x="235" y="245" width="30" height="10" rx="2" fill="white" />
-
-                {/* Connection lines */}
-                <motion.line
-                  x1="250" y1="190" x2="250" y2="100"
-                  stroke="#0D7377" strokeWidth="2" opacity="0.3"
-                  strokeDasharray="5,5"
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 1.5, delay: 1 }}
-                />
-                <motion.line
-                  x1="310" y1="250" x2="400" y2="250"
-                  stroke="#0D7377" strokeWidth="2" opacity="0.3"
-                  strokeDasharray="5,5"
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 1.5, delay: 1.2 }}
-                />
-                <motion.line
-                  x1="250" y1="310" x2="250" y2="400"
-                  stroke="#E8505B" strokeWidth="2" opacity="0.3"
-                  strokeDasharray="5,5"
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 1.5, delay: 1.4 }}
-                />
-                <motion.line
-                  x1="190" y1="250" x2="100" y2="250"
-                  stroke="#E8505B" strokeWidth="2" opacity="0.3"
-                  strokeDasharray="5,5"
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 1.5, delay: 1.6 }}
-                />
-
-                {/* Diagonal connections */}
-                <motion.line
-                  x1="292" y1="208" x2="370" y2="130"
-                  stroke="#D4A843" strokeWidth="2" opacity="0.3"
-                  strokeDasharray="5,5"
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 1.5, delay: 1.8 }}
-                />
-                <motion.line
-                  x1="208" y1="208" x2="130" y2="130"
-                  stroke="#D4A843" strokeWidth="2" opacity="0.3"
-                  strokeDasharray="5,5"
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 1.5, delay: 2 }}
-                />
-
-                {/* Outer nodes */}
-                <motion.circle
-                  cx="250" cy="80" r="30" fill="white" stroke="#0D7377" strokeWidth="2"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 0.5, delay: 1.5 }}
-                />
-                <motion.text
-                  x="250" y="85" textAnchor="middle" fill="#0D7377" fontSize="14" fontWeight="600"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 1.8 }}
-                >
-                  EMR
-                </motion.text>
-
-                <motion.circle
-                  cx="420" cy="250" r="30" fill="white" stroke="#0D7377" strokeWidth="2"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 0.5, delay: 1.7 }}
-                />
-                <motion.text
-                  x="420" y="255" textAnchor="middle" fill="#0D7377" fontSize="14" fontWeight="600"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 2 }}
-                >
-                  LIS
-                </motion.text>
-
-                <motion.circle
-                  cx="250" cy="420" r="30" fill="white" stroke="#E8505B" strokeWidth="2"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 0.5, delay: 1.9 }}
-                />
-                <motion.text
-                  x="250" y="425" textAnchor="middle" fill="#E8505B" fontSize="12" fontWeight="600"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 2.2 }}
-                >
-                  PACS
-                </motion.text>
-
-                <motion.circle
-                  cx="80" cy="250" r="30" fill="white" stroke="#E8505B" strokeWidth="2"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 0.5, delay: 2.1 }}
-                />
-                <motion.text
-                  x="80" y="255" textAnchor="middle" fill="#E8505B" fontSize="12" fontWeight="600"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 2.4 }}
-                >
-                  Tally
-                </motion.text>
-
-                {/* Top-right node */}
-                <motion.circle
-                  cx="380" cy="120" r="25" fill="white" stroke="#D4A843" strokeWidth="2"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 0.5, delay: 2.3 }}
-                />
-                <motion.text
-                  x="380" y="125" textAnchor="middle" fill="#D4A843" fontSize="11" fontWeight="600"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 2.5 }}
-                >
-                  AI
-                </motion.text>
-
-                {/* Top-left node */}
-                <motion.circle
-                  cx="120" cy="120" r="25" fill="white" stroke="#D4A843" strokeWidth="2"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 0.5, delay: 2.5 }}
-                />
-                <motion.text
-                  x="120" y="125" textAnchor="middle" fill="#D4A843" fontSize="10" fontWeight="600"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 2.7 }}
-                >
-                  SMS
-                </motion.text>
-              </svg>
+              {/* Decorative border */}
+              <div className="absolute -inset-3 rounded-2xl border-2 border-teal-deep/20" />
 
               {/* Floating badge */}
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -right-4 top-1/4 rounded-xl bg-white px-4 py-2 shadow-lg"
+                className="absolute -right-6 top-8 z-20 rounded-xl bg-white px-4 py-2 shadow-lg"
               >
                 <span className="font-mono text-sm font-semibold text-teal-deep">
                   0 Defects
@@ -328,7 +180,7 @@ export default function Hero() {
                   ease: "easeInOut",
                   delay: 1,
                 }}
-                className="absolute -left-4 bottom-1/4 rounded-xl bg-white px-4 py-2 shadow-lg"
+                className="absolute -left-6 bottom-12 z-20 rounded-xl bg-white px-4 py-2 shadow-lg"
               >
                 <span className="font-mono text-sm font-semibold text-coral">
                   150+ Hospitals

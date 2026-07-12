@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 
 export default function About() {
@@ -67,63 +66,14 @@ export default function About() {
             <div className="relative">
               {/* Profile card */}
               <div className="rounded-2xl bg-offwhite p-8 lg:p-10">
-                {/* Abstract illustration: Hospital + Person */}
-                <svg
-                  viewBox="0 0 400 400"
-                  className="mx-auto h-auto w-full max-w-sm"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  {/* Hospital building */}
-                  <rect x="120" y="120" width="160" height="200" rx="8" fill="#0D7377" opacity="0.1" />
-                  <rect x="130" y="130" width="140" height="180" rx="4" fill="white" stroke="#0D7377" strokeWidth="2" />
-
-                  {/* Windows */}
-                  <rect x="145" y="150" width="25" height="20" rx="2" fill="#0D7377" opacity="0.3" />
-                  <rect x="187" y="150" width="25" height="20" rx="2" fill="#0D7377" opacity="0.3" />
-                  <rect x="230" y="150" width="25" height="20" rx="2" fill="#0D7377" opacity="0.3" />
-                  <rect x="145" y="185" width="25" height="20" rx="2" fill="#0D7377" opacity="0.3" />
-                  <rect x="187" y="185" width="25" height="20" rx="2" fill="#E8505B" opacity="0.3" />
-                  <rect x="230" y="185" width="25" height="20" rx="2" fill="#0D7377" opacity="0.3" />
-                  <rect x="145" y="220" width="25" height="20" rx="2" fill="#0D7377" opacity="0.3" />
-                  <rect x="187" y="220" width="25" height="20" rx="2" fill="#0D7377" opacity="0.3" />
-                  <rect x="230" y="220" width="25" height="20" rx="2" fill="#D4A843" opacity="0.3" />
-
-                  {/* Door */}
-                  <rect x="180" y="270" width="40" height="40" rx="4" fill="#0D7377" opacity="0.2" />
-                  <circle cx="212" cy="290" r="3" fill="#0D7377" />
-
-                  {/* Cross on building */}
-                  <rect x="193" y="135" width="14" height="5" rx="1" fill="#E8505B" />
-                  <rect x="198" y="130" width="4" height="15" rx="1" fill="#E8505B" />
-
-                  {/* Person (QA) */}
-                  <circle cx="80" cy="280" r="18" fill="#E8505B" opacity="0.2" />
-                  <circle cx="80" cy="275" r="10" fill="#E8505B" opacity="0.4" />
-                  <path d="M65 300 Q80 290 95 300 L95 320 L65 320 Z" fill="#E8505B" opacity="0.3" />
-
-                  {/* Magnifying glass (QA symbol) */}
-                  <circle cx="100" cy="265" r="12" stroke="#E8505B" strokeWidth="2" fill="none" />
-                  <line x1="108" y1="273" x2="120" y2="285" stroke="#E8505B" strokeWidth="3" strokeLinecap="round" />
-
-                  {/* Checkmark (quality) */}
-                  <motion.path
-                    d="M320 160 L330 170 L350 150"
-                    stroke="#0D7377"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    initial={{ pathLength: 0 }}
-                    whileInView={{ pathLength: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, delay: 0.5 }}
+                {/* Profile photo */}
+                <div className="overflow-hidden rounded-xl shadow-lg">
+                  <img
+                    src="/images/profile.png"
+                    alt="Mohammed Imthiyaz A"
+                    className="h-72 w-full object-cover object-top"
                   />
-                  <circle cx="335" cy="160" r="25" stroke="#0D7377" strokeWidth="2" fill="none" opacity="0.3" />
-
-                  {/* Connection lines */}
-                  <line x1="95" y1="280" x2="130" y2="220" stroke="#E8505B" strokeWidth="1" strokeDasharray="4,4" opacity="0.4" />
-                  <line x1="120" y1="265" x2="180" y2="200" stroke="#0D7377" strokeWidth="1" strokeDasharray="4,4" opacity="0.4" />
-                </svg>
+                </div>
 
                 {/* Key traits */}
                 <div className="mt-8 grid grid-cols-2 gap-4">
