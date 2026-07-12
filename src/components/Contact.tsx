@@ -1,49 +1,39 @@
 "use client";
 
-import { useState, FormEvent, useEffect, useRef } from "react";
+import { useState, FormEvent, useRef } from "react";
 import { motion } from "framer-motion";
 import { Send, Mail, Phone, MapPin, Linkedin, Github, CheckCircle, AlertCircle } from "lucide-react";
+import emailjs from "@emailjs/browser";
 import AnimatedSection from "./AnimatedSection";
 import { CONTACT } from "@/lib/constants";
 
-export default function Contact() {
-  const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+const EMAILJS_SERVICE_ID = "service_bb3lnfh";
+const EMAILJS_TEMPLATE_ID = "template_d1jzc39";
+const EMAILJS_PUBLIC_KEY = "JyMjSs_2QGalcH01e";
 
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
-  }, []);
+export default function Contact() {
+  const formRef = useRef<HTMLFormElement>(null);
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    if (!formRef.current) return;
     setStatus("sending");
 
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formState),
-      });
-
-      if (res.ok) {
-        setStatus("success");
-        setFormState({ name: "", email: "", message: "" });
-      } else {
-        setStatus("error");
-      }
+      await emailjs.sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        EMAILJS_PUBLIC_KEY
+      );
+      setStatus("success");
+      formRef.current.reset();
     } catch {
       setStatus("error");
     }
 
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    timeoutRef.current = setTimeout(() => setStatus("idle"), 4000);
+    setTimeout(() => setStatus("idle"), 4000);
   };
 
   return (
@@ -139,7 +129,7 @@ export default function Contact() {
 
           {/* Right: Contact Form */}
           <AnimatedSection direction="right" delay={0.2}>
-            <form onSubmit={handleSubmit} className="card">
+            <form ref={formRef} onSubmit={handleSubmit} className="card">
               <div className="mb-6">
                 <label
                   htmlFor="name"
@@ -149,11 +139,8 @@ export default function Contact() {
                 </label>
                 <input
                   type="text"
+                  name="from_name"
                   id="name"
-                  value={formState.name}
-                  onChange={(e) =>
-                    setFormState({ ...formState, name: e.target.value })
-                  }
                   required
                   className="w-full rounded-lg border border-gray-200 bg-offwhite px-4 py-3 text-sm text-charcoal outline-none transition-colors focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20"
                   placeholder="Your name"
@@ -169,11 +156,8 @@ export default function Contact() {
                 </label>
                 <input
                   type="email"
+                  name="from_email"
                   id="email"
-                  value={formState.email}
-                  onChange={(e) =>
-                    setFormState({ ...formState, email: e.target.value })
-                  }
                   required
                   className="w-full rounded-lg border border-gray-200 bg-offwhite px-4 py-3 text-sm text-charcoal outline-none transition-colors focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20"
                   placeholder="your@email.com"
@@ -188,11 +172,8 @@ export default function Contact() {
                   Message
                 </label>
                 <textarea
+                  name="message"
                   id="message"
-                  value={formState.message}
-                  onChange={(e) =>
-                    setFormState({ ...formState, message: e.target.value })
-                  }
                   required
                   rows={5}
                   className="w-full resize-none rounded-lg border border-gray-200 bg-offwhite px-4 py-3 text-sm text-charcoal outline-none transition-colors focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20"
@@ -202,7 +183,7 @@ export default function Contact() {
 
               {status === "success" && (
                 <div className="mb-4 flex items-center gap-2 rounded-lg bg-green-50 p-3 text-sm text-green-700">
-                  <CheckCircle size={16} /> Message sent successfully!
+                  <CheckCircle size={16} /> Message sent! Check your email.
                 </div>
               )}
 
