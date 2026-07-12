@@ -15,7 +15,7 @@ export default function Projects() {
           </h2>
         </AnimatedSection>
 
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {PROJECTS.map((project, index) => (
             <AnimatedSection key={project.title} delay={index * 0.2}>
               <motion.div

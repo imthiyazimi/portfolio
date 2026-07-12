@@ -8,12 +8,10 @@ function StatItem({
   value,
   suffix,
   label,
-  index,
 }: {
   value: number;
   suffix: string;
   label: string;
-  index: number;
 }) {
   const { count, ref } = useCountUp(value, 2000);
 
@@ -46,7 +44,6 @@ export default function Stats() {
                 value={stat.value}
                 suffix={stat.suffix}
                 label={stat.label}
-                index={index}
               />
             </AnimatedSection>
           ))}

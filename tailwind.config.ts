@@ -56,9 +56,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        serif: ['"DM Serif Display"', "Georgia", "serif"],
-        sans: ["Inter", "system-ui", "sans-serif"],
-        mono: ['"JetBrains Mono"', "monospace"],
+        serif: ["var(--font-dm-serif)", "Georgia", "serif"],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        mono: ["var(--font-jetbrains)", "monospace"],
       },
     },
   },

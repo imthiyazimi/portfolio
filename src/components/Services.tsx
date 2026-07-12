@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Shield, Layers, Heart, Briefcase } from "lucide-react";
+import { Shield, Layers, Heart } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 import { SERVICES } from "@/lib/constants";
 
@@ -10,8 +10,6 @@ const iconMap: Record<string, React.ComponentType<Record<string, unknown>>> = {
   "Business Analysis": Layers,
   "Healthcare Domain": Heart,
 };
-
-const defaultIcon = Briefcase;
 
 export default function Services() {
   return (
@@ -30,7 +28,7 @@ export default function Services() {
 
         <div className="grid gap-8 md:grid-cols-3">
           {SERVICES.map((service, index) => {
-            const Icon = iconMap[service.title] || defaultIcon;
+            const Icon = iconMap[service.title] || Shield;
             return (
               <AnimatedSection key={service.title} delay={index * 0.15}>
                 <motion.div

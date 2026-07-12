@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
@@ -16,6 +16,21 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleEscape = useCallback((e: KeyboardEvent) => {
+    if (e.key === "Escape") setIsMobileOpen(false);
+  }, []);
+
+  useEffect(() => {
+    if (isMobileOpen) {
+      document.addEventListener("keydown", handleEscape);
+      document.body.style.overflow = "hidden";
+    }
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+      document.body.style.overflow = "";
+    };
+  }, [isMobileOpen, handleEscape]);
 
   return (
     <motion.nav
@@ -53,7 +68,8 @@ export default function Navbar() {
         <button
           onClick={() => setIsMobileOpen(!isMobileOpen)}
           className="text-charcoal md:hidden"
-          aria-label="Toggle menu"
+          aria-label={isMobileOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMobileOpen}
         >
           {isMobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -67,6 +83,9 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="border-t border-gray-100 bg-white md:hidden"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Navigation menu"
           >
             <div className="flex flex-col gap-4 px-6 py-6">
               {NAV_LINKS.map((link) => (

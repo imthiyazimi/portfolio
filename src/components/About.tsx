@@ -1,7 +1,6 @@
 "use client";
 
 import AnimatedSection from "./AnimatedSection";
-import { PROFILE_PHOTO } from "@/lib/profilePhoto";
 
 export default function About() {
   return (
@@ -70,7 +69,7 @@ export default function About() {
                 {/* Profile photo */}
                 <div className="overflow-hidden rounded-xl shadow-lg">
                   <img
-                    src={PROFILE_PHOTO}
+                    src="/images/profile.png"
                     alt="Mohammed Imthiyaz A"
                     className="aspect-[3/4] w-full object-cover object-center"
                   />

@@ -24,12 +24,13 @@ export default function TechStack() {
                   {category}
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  {tools.map((tool, toolIndex) => (
-                    <AnimatedSection key={tool} delay={catIndex * 0.1 + toolIndex * 0.05}>
-                      <span className="rounded-lg bg-offwhite px-3 py-2 text-sm font-medium text-charcoal/70 transition-all hover:bg-teal-deep hover:text-white">
-                        {tool}
-                      </span>
-                    </AnimatedSection>
+                  {tools.map((tool) => (
+                    <span
+                      key={tool}
+                      className="rounded-lg bg-offwhite px-3 py-2 text-sm font-medium text-charcoal/70 transition-all hover:bg-teal-deep hover:text-white"
+                    >
+                      {tool}
+                    </span>
                   ))}
                 </div>
               </div>

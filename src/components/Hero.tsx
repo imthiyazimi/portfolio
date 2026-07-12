@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Linkedin, Github, Mail } from "lucide-react";
 import { CONTACT } from "@/lib/constants";
-import { PROFILE_PHOTO } from "@/lib/profilePhoto";
 
 export default function Hero() {
   return (
@@ -151,7 +150,7 @@ export default function Hero() {
               {/* Profile photo */}
               <div className="relative z-10 overflow-hidden rounded-2xl shadow-2xl">
                 <img
-                  src={PROFILE_PHOTO}
+                  src="/images/profile.png"
                   alt="Mohammed Imthiyaz A"
                   className="h-[300px] w-auto object-cover sm:h-[380px] lg:h-[480px]"
                 />
