@@ -2,7 +2,7 @@
 
 Personal portfolio website showcasing 10+ years of healthcare IT expertise in quality analysis and business analysis.
 
-**Live:** [your-site.vercel.app](https://your-site.vercel.app)
+**Live:** [myportfolio-seven-ruby-43.vercel.app](https://myportfolio-seven-ruby-43.vercel.app)
 
 ## Tech Stack
 - Next.js 14
