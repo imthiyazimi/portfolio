@@ -44,54 +44,21 @@ const config: Config = {
         offwhite: "#FAFAFA",
         charcoal: "#2D2D2D",
         slate: {
+          100: "#f1f5f9",
+          200: "#e2e8f0",
+          300: "#cbd5e1",
+          400: "#94a3b8",
+          500: "#64748b",
           600: "#6B7280",
+          700: "#374151",
+          800: "#1f2937",
+          900: "#111827",
         },
       },
       fontFamily: {
         serif: ['"DM Serif Display"', "Georgia", "serif"],
         sans: ["Inter", "system-ui", "sans-serif"],
         mono: ['"JetBrains Mono"', "monospace"],
-      },
-      animation: {
-        "fade-in": "fadeIn 0.6s ease-out forwards",
-        "slide-up": "slideUp 0.6s ease-out forwards",
-        "slide-in-left": "slideInLeft 0.6s ease-out forwards",
-        "slide-in-right": "slideInRight 0.6s ease-out forwards",
-        "count-up": "countUp 2s ease-out forwards",
-        "draw-line": "drawLine 1.5s ease-out forwards",
-        "pulse-soft": "pulseSoft 2s ease-in-out infinite",
-        float: "float 6s ease-in-out infinite",
-        typewriter: "typewriter 1.5s steps(40) forwards",
-      },
-      keyframes: {
-        fadeIn: {
-          "0%": { opacity: "0" },
-          "100%": { opacity: "1" },
-        },
-        slideUp: {
-          "0%": { opacity: "0", transform: "translateY(30px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        slideInLeft: {
-          "0%": { opacity: "0", transform: "translateX(-30px)" },
-          "100%": { opacity: "1", transform: "translateX(0)" },
-        },
-        slideInRight: {
-          "0%": { opacity: "0", transform: "translateX(30px)" },
-          "100%": { opacity: "1", transform: "translateX(0)" },
-        },
-        drawLine: {
-          "0%": { strokeDashoffset: "1000" },
-          "100%": { strokeDashoffset: "0" },
-        },
-        pulseSoft: {
-          "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0.5" },
-        },
-        float: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-20px)" },
-        },
       },
     },
   },

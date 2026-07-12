@@ -145,7 +145,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="relative hidden lg:flex lg:justify-center lg:items-center"
+            className="relative flex justify-center items-center"
           >
             <div className="relative">
               {/* Profile photo */}
@@ -153,7 +153,7 @@ export default function Hero() {
                 <img
                   src={PROFILE_PHOTO}
                   alt="Mohammed Imthiyaz A"
-                  className="h-[480px] w-auto object-cover"
+                  className="h-[300px] w-auto object-cover sm:h-[380px] lg:h-[480px]"
                 />
                 {/* Subtle teal overlay at bottom */}
                 <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-teal-deep/20 to-transparent" />

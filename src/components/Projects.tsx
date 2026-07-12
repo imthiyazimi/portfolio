@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 import { PROJECTS } from "@/lib/constants";
 
@@ -33,10 +32,6 @@ export default function Projects() {
                       </h3>
                       <p className="text-sm text-teal-200">{project.subtitle}</p>
                     </div>
-                    <ExternalLink
-                      size={20}
-                      className="mt-1 text-teal-200 transition-colors group-hover:text-white"
-                    />
                   </div>
                   <p className="mt-3 font-mono text-xs text-teal-100">
                     {project.stats}

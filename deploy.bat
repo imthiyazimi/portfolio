@@ -6,29 +6,37 @@ echo.
 
 cd /d "C:\Users\Imtiyaz\Documents\New OpenCode Project\portfolio"
 
-echo [1/5] Initializing Git...
-git init
-echo.
+echo [1/6] Installing dependencies...
+call npm install
+if %errorlevel% neq 0 (
+    echo ERROR: npm install failed
+    pause
+    exit /b 1
+)
 
-echo [2/5] Adding files...
+echo [2/6] Building project...
+call npm run build
+if %errorlevel% neq 0 (
+    echo ERROR: Build failed
+    pause
+    exit /b 1
+)
+
+echo [3/6] Adding files...
 git add .
-echo.
 
-echo [3/5] Committing...
-git commit -m "Initial portfolio - Mohammed Imthiyaz A"
-echo.
+echo [4/6] Committing...
+git commit -m "Portfolio update - %date% %time%"
 
-echo [4/5] Adding remote...
-git remote add origin https://github.com/imthiyazimi/portfolio.git
-echo.
+echo [5/6] Setting remote...
+git remote set-url origin https://github.com/imthiyazimi/portfolio.git 2>nul || git remote add origin https://github.com/imthiyazimi/portfolio.git
 
-echo [5/5] Pushing to GitHub...
+echo [6/6] Pushing to GitHub...
 git branch -M main
 git push -u origin main
-echo.
 
+echo.
 echo ========================================
-echo  Done! Now deploy on Vercel:
-echo  https://vercel.com/new
+echo  Done! Vercel will auto-deploy.
 echo ========================================
 pause

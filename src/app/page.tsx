@@ -7,6 +7,7 @@ import Stats from "@/components/Stats";
 import TechStack from "@/components/TechStack";
 import Projects from "@/components/Projects";
 import Process from "@/components/Process";
+import Education from "@/components/Education";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -22,6 +23,7 @@ export default function Home() {
       <TechStack />
       <Projects />
       <Process />
+      <Education />
       <Contact />
       <Footer />
     </main>

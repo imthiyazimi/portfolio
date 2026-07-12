@@ -11,7 +11,10 @@ export function useCountUp(end: number, duration: number = 2000) {
   });
 
   useEffect(() => {
-    if (!inView) return;
+    if (!inView || end === 0) {
+      if (end === 0) setCount(0);
+      return;
+    }
 
     let startTime: number | null = null;
     const step = (timestamp: number) => {

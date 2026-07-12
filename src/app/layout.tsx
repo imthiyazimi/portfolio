@@ -15,13 +15,16 @@ export const metadata: Metadata = {
     "Software Testing",
     "Hyderabad",
   ],
+  icons: {
+    icon: "/favicon.svg",
+  },
   openGraph: {
     title: "Mohammed Imthiyaz A | Healthcare IT Specialist",
     description:
       "10 years. 150+ hospitals. Zero critical production defects. The person who makes sure hospital software works flawlessly.",
     type: "website",
     locale: "en_US",
-    siteName: "Mohammed Imthiyaz A",
+    siteName: "Mohammed Imthiyaz A | Portfolio",
   },
   twitter: {
     card: "summary_large_image",
@@ -37,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className="font-sans antialiased">{children}</body>
     </html>
   );

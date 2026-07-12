@@ -2,7 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
-import { Send, Mail, Phone, MapPin, Linkedin, Github } from "lucide-react";
+import { Send, Mail, Phone, MapPin, Linkedin, Github, CheckCircle, AlertCircle } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 import { CONTACT } from "@/lib/constants";
 
@@ -12,14 +12,30 @@ export default function Contact() {
     email: "",
     message: "",
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    // Form submission logic would go here
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
-    setFormState({ name: "", email: "", message: "" });
+    setStatus("sending");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formState),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        setFormState({ name: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+
+    setTimeout(() => setStatus("idle"), 4000);
   };
 
   return (
@@ -40,7 +56,6 @@ export default function Contact() {
           {/* Left: Contact Info */}
           <AnimatedSection direction="left">
             <div className="space-y-8">
-              {/* Contact cards */}
               <div className="space-y-4">
                 <a
                   href={`mailto:${CONTACT.email}`}
@@ -60,7 +75,7 @@ export default function Contact() {
                 </a>
 
                 <a
-                  href={`tel:${CONTACT.phone.replace(/\s/g, "")}`}
+                  href={`tel:${CONTACT.phone.replace(/[\s-]/g, "")}`}
                   className="card flex items-center gap-4 transition-all hover:border-coral"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-coral/10">
@@ -91,7 +106,6 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Social links */}
               <div className="flex gap-4">
                 <a
                   href={CONTACT.linkedin}
@@ -178,14 +192,27 @@ export default function Contact() {
                 />
               </div>
 
+              {status === "success" && (
+                <div className="mb-4 flex items-center gap-2 rounded-lg bg-green-50 p-3 text-sm text-green-700">
+                  <CheckCircle size={16} /> Message sent successfully!
+                </div>
+              )}
+
+              {status === "error" && (
+                <div className="mb-4 flex items-center gap-2 rounded-lg bg-red-50 p-3 text-sm text-red-700">
+                  <AlertCircle size={16} /> Failed to send. Try again later.
+                </div>
+              )}
+
               <motion.button
                 type="submit"
+                disabled={status === "sending"}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="btn-primary w-full justify-center"
+                className="btn-primary w-full justify-center disabled:opacity-50"
               >
-                {submitted ? (
-                  "Message Sent!"
+                {status === "sending" ? (
+                  "Sending..."
                 ) : (
                   <>
                     Send Message <Send size={16} />
