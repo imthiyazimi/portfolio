@@ -71,7 +71,7 @@ export default function About() {
                   <img
                     src="/images/profile.png"
                     alt="Mohammed Imthiyaz A"
-                    className="h-72 w-full object-cover object-top"
+                    className="aspect-[3/4] w-full object-cover object-center"
                   />
                 </div>
 
