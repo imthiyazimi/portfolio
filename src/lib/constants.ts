@@ -13,7 +13,7 @@ export const STATS = [
   { value: 0, suffix: "", label: "Critical Defects" },
   { value: 20, suffix: "+", label: "Modules Tested" },
   { value: 300, suffix: "+", label: "Screens Managed" },
-  { value: 15, suffix: "+", label: "Reports Automated" },
+  { value: 150, suffix: "+", label: "Reports" },
   { value: 3, suffix: "+", label: "Integrations Deployed" },
 ];
 
@@ -30,9 +30,11 @@ export const SERVICES = [
       "Regression Testing",
       "Exploratory Testing",
       "Defect Management",
+      "Test Summary Reports",
+      "STCM Reports",
     ],
     description:
-      "I don't just follow test scripts. I think like a user, break things creatively, and document everything so nothing slips through.",
+      "I don't just follow test scripts. I think like a user, break things creatively, and document everything so nothing slips through. From test charters to traceability matrices — comprehensive coverage is the standard.",
   },
   {
     title: "Business Analysis",
@@ -44,26 +46,29 @@ export const SERVICES = [
       "Figma & Draw.io Wireframing",
       "Scrum Process",
       "Client Liaison",
+      "Stakeholder Management",
       "RTM Documentation",
+      "Traceability Matrix",
     ],
     description:
-      "I sit in meetings where doctors explain what they need, then I turn that into clear specs developers can build from. No ambiguity. No assumptions.",
+      "I sit in meetings where doctors explain what they need, then I turn that into clear specs developers can build from. No ambiguity. No assumptions. Client approval before a single line of code is written.",
   },
   {
     title: "Healthcare Domain",
     tagline: "10 years of speaking both clinical and technical.",
     skills: [
       "Hospital Management Systems",
-      "EMR / MRD",
-      "Patient Information",
+      "EMR / MRD / MCI",
+      "Patient Information Systems",
       "Clinical Workflows",
       "Healthcare Billing",
       "Multi-tenant Architecture",
       "Compliance & Audit",
       "AI in Healthcare",
+      "Hospital Operations",
     ],
     description:
-      "Healthcare isn't just another industry vertical. It has its own language, its own regulations, and zero tolerance for downtime. I know both worlds.",
+      "Healthcare isn't just another industry vertical. It has its own language, its own regulations, and zero tolerance for downtime. I know both worlds — from appointment booking to radiology reports.",
   },
 ];
 
@@ -75,13 +80,15 @@ export const TIMELINE = [
     location: "Hyderabad",
     duration: "3+ Years",
     highlights: [
-      "Leading QA & BA for WHIS serving 7+ Kamineni Hospital locations",
-      "Directing major enhancements: EMR, MRD/MCI, Patient Portal, Mobile App",
-      "Implementing Spark AI - AI-based Radiology Reports on Voice & Keywords",
-      "Managing integrations: Tally, LIS, PACS, SMS/WhatsApp",
-      "Facilitating daily scrum meetings between clinical & dev teams",
+      "Leading QA & BA for WHIS serving 7+ Kamineni Hospital locations with multi-tenant architecture",
+      "Directing major enhancements: EMR, MRD/MCI, Patient Portal, Dashboards, Mobile App, Kiosk",
+      "Implementing Spark AI — AI-based Radiology Reports on Voice & Keywords for paperless operations",
+      "Managing enterprise integrations: Tally, LIS, PACS, SMS/WhatsApp",
+      "Facilitating daily client interactions and scrum meetings between clinical & dev teams",
+      "Managed incidents, service requests using Odoo Ticketing System",
+      "Leading KT sessions and mentoring new team members",
     ],
-    tools: ["MySQL", "Tomcat", "IIS", "GCP", "Odoo"],
+    tools: ["MySQL", "Tomcat", "IIS", "GCP", "Odoo", "Spark AI"],
   },
   {
     period: "Jul 2016 - Mar 2023",
@@ -90,25 +97,30 @@ export const TIMELINE = [
     location: "Chennai",
     duration: "6 Years 9 Months",
     highlights: [
-      "Led QA for IdeaMed - 150+ HMS implementations across 20+ countries",
-      "Executed end-to-end business analysis: requirements to prototypes",
-      "Designed production infrastructure for multi-currency operations",
-      "Created RTM reports ensuring zero critical production defects",
-      "Prepared quarterly P&L analysis for business insights",
+      "Led QA for IdeaMed — 150+ HMS implementations across 20+ countries",
+      "Executed end-to-end business analysis: requirements to prototypes to client approval",
+      "Managed complete deployment lifecycle: pre-release, production releases, infrastructure setup",
+      "Conducted exploratory testing with test charters; prepared test summary & STCM reports",
+      "Designed production infrastructure for multi-currency, multi-timezone operations",
+      "Created RTM reports for production releases",
+      "Used GoodDay Ticketing System for task tracking, defect management, Agile sprints",
+      "Prepared data analytics reports and quarterly P&L analysis",
     ],
-    tools: ["MySQL", "Tomcat", "Jasperserver", "GoodDay", "Figma"],
+    tools: ["MySQL", "Tomcat", "Jasperserver", "GoodDay", "Figma", "Jira", "Confluence"],
   },
 ];
 
 export const TECH_STACK = {
-  Databases: ["MySQL", "SQL Queries", "SQL Server Basics"],
-  Servers: ["Tomcat Configuration", "IIS Operations", "Windows Server", "Linux"],
+  Databases: ["MySQL", "SQL Queries", "SQL Server Basics", "Text-to-SQL AI", "SQL AI"],
+  Servers: ["Tomcat Configuration", "Service Engine Setup", "IIS Operations", "Windows Server", "Linux"],
   Cloud: ["GCP (Basic)", "VPS Environment", "Linux Commands"],
-  Testing: ["Manual Testing", "Defect Tracking", "Test Management", "Test Reporting"],
+  Testing: ["Manual Testing", "Defect Tracking", "Test Management", "Test Reporting", "Exploratory Testing", "Jira", "Confluence"],
   Design: ["Figma", "Draw.io", "Prototyping"],
   Analytics: ["PowerBI", "Data Analytics", "P&L Analysis"],
-  Integrations: ["Tally", "LIS", "PACS", "SMS/WhatsApp", "Spark AI"],
-  Tools: ["GoodDay", "Odoo", "MS Office Suite"],
+  AI: ["Python Automation", "Browser Automation", "AI Master Data Creation", "Spark AI", "Text-to-SQL", "Augnito Voice-to-Text"],
+  Integrations: ["Tally", "LIS", "PACS", "SMS/WhatsApp", "QR Code Generation"],
+  Tools: ["GoodDay", "Odoo", "MS Office Suite", "PyCharm", "VS Code"],
+  Interests: ["Blockchain", "Web3", "OpenCode AI", "Emerging Tech", "Healthcare IT Innovation"],
 };
 
 export const PROJECTS = [
@@ -117,13 +129,14 @@ export const PROJECTS = [
     subtitle: "Hospital Management System",
     stats: "150+ hospitals | 20+ countries | 20+ modules",
     description:
-      "A complete hospital management solution handling everything from appointment booking to billing to clinical documentation. Multi-currency, multi-timezone, multi-tenant — built to serve single-specialty clinics and multi-specialty hospitals alike.",
+      "A complete hospital management solution handling everything from appointment booking to billing to clinical documentation. Multi-currency, multi-timezone, multi-tenant — built to serve single-specialty clinics, multi-specialty hospitals, and medical colleges alike.",
     tech: ["MySQL", "Tomcat", "Jasperserver", "Radaptive"],
     highlights: [
-      "300+ screens and 150+ reports",
-      "Multi-currency, multi-timezone support",
-      "Common database across N branch locations",
+      "300+ screens and 150+ reports with comprehensive test coverage",
+      "Multi-currency, multi-timezone, multi-tenant support",
+      "Common database infrastructure across N branch locations",
       "Zero critical production defects",
+      "Deployed across Ubuntu/Linux and cloud environments",
     ],
   },
   {
@@ -131,13 +144,28 @@ export const PROJECTS = [
     subtitle: "Hospital Information System with AI",
     stats: "7 branches | AI-powered | Paperless",
     description:
-      "A modern HMS enhanced with artificial intelligence. Spark AI generates radiology reports from voice and keywords, making clinical documentation paperless and efficient. Integrates with Tally, LIS, PACS, and WhatsApp.",
+      "A modern HMS enhanced with artificial intelligence. Spark AI generates radiology reports from voice and keywords, making clinical documentation paperless and efficient. Integrates with Tally, LIS, PACS, and WhatsApp for enterprise-grade operations.",
     tech: ["MySQL", "Tomcat", "IIS", "GCP"],
     highlights: [
-      "AI-based radiology reports on voice & keywords",
-      "Multi-tenant shared database architecture",
-      "EMR, Patient Portal, Mobile App, Kiosk",
-      "Tally, LIS, PACS enterprise integrations",
+      "AI-based radiology reports on voice & keywords (Spark AI)",
+      "Multi-tenant shared database architecture across 7 branches",
+      "EMR, Patient Portal, Mobile App, Kiosk development",
+      "Tally, LIS, PACS, SMS/WhatsApp enterprise integrations",
+      "10+ modules, 100+ screens, 50+ reports for Indian healthcare",
+    ],
+  },
+  {
+    title: "Python AI Automation",
+    subtitle: "Browser Automation for Master Data",
+    stats: "AI-powered | Self-developed",
+    description:
+      "Self-developed Python automation using AI for browser automation to create master data into healthcare applications. Reduces manual data entry and speeds up setup for new hospital deployments.",
+    tech: ["Python", "PyCharm", "AI", "Browser Automation"],
+    highlights: [
+      "Automated master data creation using AI",
+      "Browser automation for repetitive tasks",
+      "Reduced manual effort in hospital setup",
+      "Self-developed and maintained",
     ],
   },
 ];
@@ -168,6 +196,12 @@ export const PROCESS_STEPS = [
     description: "Production deployment, knowledge transfer, team mentoring, continuous monitoring",
   },
 ];
+
+export const EDUCATION = {
+  degree: "Bachelor of Engineering (B.E.)",
+  specialization: "Electronics and Communication Engineering",
+  college: "C. Abdul Hakeem College of Engineering and Technology",
+};
 
 export const CONTACT = {
   email: "Imthiyazzilaan@gmail.com",
