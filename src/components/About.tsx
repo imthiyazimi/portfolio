@@ -1,16 +1,36 @@
 "use client";
 
+import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
+import TiltCard from "./three/TiltCard";
+import Parallax from "./three/Parallax";
+import FloatingText from "./three/FloatingText";
 
 export default function About() {
   return (
-    <section id="about" className="section-padding bg-white">
+    <section id="about" className="section-padding bg-white relative overflow-hidden">
+      {/* 3D floating background elements */}
+      <div className="pointer-events-none absolute inset-0">
+        <motion.div
+          animate={{ rotate: [0, 360] }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          className="absolute -right-20 top-20 h-40 w-40 rounded-full border border-teal-deep/10"
+        />
+        <motion.div
+          animate={{ rotate: [0, -360] }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          className="absolute -left-10 bottom-20 h-32 w-32 rounded-full border border-coral/10"
+        />
+      </div>
+
       <div className="container-max">
         <div className="grid items-start gap-16 lg:grid-cols-2">
           {/* Left: Text */}
           <div>
             <AnimatedSection>
-              <p className="label mb-4 text-coral">Who I Am</p>
+              <FloatingText intensity={0.3}>
+                <p className="label mb-4 text-coral">Who I Am</p>
+              </FloatingText>
               <h2 className="heading-md mb-8 text-charcoal">
                 10 years. 150+ hospitals.
                 <br />
@@ -61,40 +81,53 @@ export default function About() {
             </AnimatedSection>
           </div>
 
-          {/* Right: Visual */}
+          {/* Right: Visual with 3D effects */}
           <AnimatedSection direction="right" delay={0.3}>
-            <div className="relative">
-              {/* Profile card */}
-              <div className="rounded-2xl bg-offwhite p-8 lg:p-10">
-                {/* Profile photo */}
-                <div className="overflow-hidden rounded-xl shadow-lg">
-                  <img
-                    src="/images/profile.png"
-                    alt="Mohammed Imthiyaz A"
-                    className="aspect-[3/4] w-full object-cover object-center"
-                  />
-                </div>
+            <Parallax speed={0.2}>
+              <TiltCard tiltAmount={8} className="relative">
+                <div className="rounded-2xl bg-offwhite p-8 lg:p-10">
+                  {/* Profile photo with 3D depth */}
+                  <motion.div
+                    className="overflow-hidden rounded-xl shadow-lg"
+                    whileHover={{ scale: 1.02, rotateY: 3 }}
+                    style={{ perspective: "1000px" }}
+                  >
+                    <img
+                      src="/images/profile.png"
+                      alt="Mohammed Imthiyaz A"
+                      className="aspect-[3/4] w-full object-cover object-center"
+                    />
+                  </motion.div>
 
-                {/* Key traits */}
-                <div className="mt-8 grid grid-cols-2 gap-4">
-                  {[
-                    { label: "Domain", value: "Healthcare IT" },
-                    { label: "Focus", value: "Zero-Defect QA" },
-                    { label: "Approach", value: "Bridge Builder" },
-                    { label: "Style", value: "Calm & Thorough" },
-                  ].map((trait) => (
-                    <div key={trait.label} className="rounded-lg bg-white p-3 text-center shadow-sm">
-                      <p className="text-xs font-medium uppercase tracking-wider text-slate-600">
-                        {trait.label}
-                      </p>
-                      <p className="mt-1 text-sm font-semibold text-teal-deep">
-                        {trait.value}
-                      </p>
-                    </div>
-                  ))}
+                  {/* Key traits with 3D cards */}
+                  <div className="mt-8 grid grid-cols-2 gap-4">
+                    {[
+                      { label: "Domain", value: "Healthcare IT" },
+                      { label: "Focus", value: "Zero-Defect QA" },
+                      { label: "Approach", value: "Bridge Builder" },
+                      { label: "Style", value: "Calm & Thorough" },
+                    ].map((trait, i) => (
+                      <motion.div
+                        key={trait.label}
+                        initial={{ opacity: 0, y: 20, rotateX: -20 }}
+                        whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                        transition={{ delay: 0.5 + i * 0.1 }}
+                        whileHover={{ scale: 1.05, rotateY: 5, z: 20 }}
+                        className="rounded-lg bg-white p-3 text-center shadow-sm"
+                        style={{ perspective: "1000px", transformStyle: "preserve-3d" }}
+                      >
+                        <p className="text-xs font-medium uppercase tracking-wider text-slate-600">
+                          {trait.label}
+                        </p>
+                        <p className="mt-1 text-sm font-semibold text-teal-deep">
+                          {trait.value}
+                        </p>
+                      </motion.div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </div>
+              </TiltCard>
+            </Parallax>
           </AnimatedSection>
         </div>
       </div>
