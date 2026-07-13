@@ -2,8 +2,9 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Box } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -62,6 +63,13 @@ export default function Navbar() {
           <a href="#contact" className="btn-primary text-sm">
             Get in Touch
           </a>
+          <Link
+            href="/3d-demo"
+            className="flex items-center gap-1.5 text-sm font-medium text-coral transition-colors hover:text-teal-deep"
+          >
+            <Box size={16} />
+            3D Demo
+          </Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -105,6 +113,14 @@ export default function Navbar() {
               >
                 Get in Touch
               </a>
+              <Link
+                href="/3d-demo"
+                onClick={() => setIsMobileOpen(false)}
+                className="flex items-center justify-center gap-1.5 text-sm font-medium text-coral transition-colors hover:text-teal-deep mt-2"
+              >
+                <Box size={16} />
+                3D Demo
+              </Link>
             </div>
           </motion.div>
         )}
