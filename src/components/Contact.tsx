@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FormEvent, useRef } from "react";
+import { useState, FormEvent, useRef, useCallback, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Send, Mail, Phone, MapPin, Linkedin, Github, CheckCircle, AlertCircle } from "lucide-react";
 import emailjs from "@emailjs/browser";
@@ -14,13 +14,77 @@ const EMAILJS_SERVICE_ID = "service_bb3lnfh";
 const EMAILJS_TEMPLATE_ID = "template_d1jzc39";
 const EMAILJS_PUBLIC_KEY = "JyMjSs_2QGalcH01e";
 
+const MAX_NAME_LENGTH = 100;
+const MAX_EMAIL_LENGTH = 254;
+const MAX_MESSAGE_LENGTH = 2000;
+
+function sanitizeInput(input: string): string {
+  return input
+    .replace(/[<>]/g, "")
+    .replace(/javascript:/gi, "")
+    .replace(/on\w+\s*=/gi, "")
+    .replace(/data:/gi, "")
+    .replace(/vbscript:/gi, "")
+    .trim();
+}
+
+function validateEmail(email: string): boolean {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email) && email.length <= MAX_EMAIL_LENGTH;
+}
+
 export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [validationErrors, setValidationErrors] = useState<{
+    name?: string;
+    email?: string;
+    message?: string;
+  }>({});
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, []);
+
+  const validateForm = useCallback((): boolean => {
+    if (!formRef.current) return false;
+
+    const formData = new FormData(formRef.current);
+    const name = sanitizeInput(formData.get("from_name") as string || "");
+    const email = (formData.get("from_email") as string || "").trim();
+    const message = sanitizeInput(formData.get("message") as string || "");
+
+    const errors: { name?: string; email?: string; message?: string } = {};
+
+    if (!name || name.length < 2) {
+      errors.name = "Name must be at least 2 characters";
+    } else if (name.length > MAX_NAME_LENGTH) {
+      errors.name = `Name must be under ${MAX_NAME_LENGTH} characters`;
+    }
+
+    if (!email) {
+      errors.email = "Email is required";
+    } else if (!validateEmail(email)) {
+      errors.email = "Please enter a valid email address";
+    }
+
+    if (!message || message.length < 10) {
+      errors.message = "Message must be at least 10 characters";
+    } else if (message.length > MAX_MESSAGE_LENGTH) {
+      errors.message = `Message must be under ${MAX_MESSAGE_LENGTH} characters`;
+    }
+
+    setValidationErrors(errors);
+    return Object.keys(errors).length === 0;
+  }, []);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (!formRef.current) return;
+    if (!formRef.current || !validateForm()) return;
+
     setStatus("sending");
 
     try {
@@ -32,16 +96,22 @@ export default function Contact() {
       );
       setStatus("success");
       formRef.current.reset();
+      setValidationErrors({});
     } catch {
       setStatus("error");
     }
 
-    setTimeout(() => setStatus("idle"), 4000);
+    timeoutRef.current = setTimeout(() => setStatus("idle"), 4000);
   };
+
+  const handleInput = useCallback(() => {
+    if (Object.keys(validationErrors).length > 0) {
+      setValidationErrors({});
+    }
+  }, [validationErrors]);
 
   return (
     <section id="contact" className="section-padding bg-white relative overflow-hidden">
-      {/* 3D floating background */}
       <div className="pointer-events-none absolute inset-0">
         <motion.div
           animate={{ rotate: [0, 360] }}
@@ -75,7 +145,6 @@ export default function Contact() {
         </AnimatedSection>
 
         <div className="grid gap-12 lg:grid-cols-2">
-          {/* Left: Contact Info */}
           <AnimatedSection direction="left">
             <Parallax speed={0.15}>
               <div className="space-y-8">
@@ -165,10 +234,14 @@ export default function Contact() {
             </Parallax>
           </AnimatedSection>
 
-          {/* Right: Contact Form */}
           <AnimatedSection direction="right" delay={0.2}>
             <TiltCard tiltAmount={5} glare={true}>
-              <form ref={formRef} onSubmit={handleSubmit} className="card">
+              <form
+                ref={formRef}
+                onSubmit={handleSubmit}
+                className="card"
+                noValidate
+              >
                 <div className="mb-6">
                   <label
                     htmlFor="name"
@@ -181,11 +254,21 @@ export default function Contact() {
                     name="from_name"
                     id="name"
                     required
+                    maxLength={MAX_NAME_LENGTH}
+                    autoComplete="name"
                     whileFocus={{ scale: 1.02, rotateX: 2 }}
-                    className="w-full rounded-lg border border-gray-200 bg-offwhite px-4 py-3 text-sm text-charcoal outline-none transition-colors focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20"
+                    onInput={handleInput}
+                    className={`w-full rounded-lg border bg-offwhite px-4 py-3 text-sm text-charcoal outline-none transition-colors focus:ring-2 focus:ring-teal-deep/20 ${
+                      validationErrors.name
+                        ? "border-red-400 focus:border-red-500"
+                        : "border-gray-200 focus:border-teal-deep"
+                    }`}
                     placeholder="Your name"
                     style={{ perspective: "1000px" }}
                   />
+                  {validationErrors.name && (
+                    <p className="mt-1 text-xs text-red-500">{validationErrors.name}</p>
+                  )}
                 </div>
 
                 <div className="mb-6">
@@ -200,11 +283,21 @@ export default function Contact() {
                     name="from_email"
                     id="email"
                     required
+                    maxLength={MAX_EMAIL_LENGTH}
+                    autoComplete="email"
                     whileFocus={{ scale: 1.02, rotateX: 2 }}
-                    className="w-full rounded-lg border border-gray-200 bg-offwhite px-4 py-3 text-sm text-charcoal outline-none transition-colors focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20"
+                    onInput={handleInput}
+                    className={`w-full rounded-lg border bg-offwhite px-4 py-3 text-sm text-charcoal outline-none transition-colors focus:ring-2 focus:ring-teal-deep/20 ${
+                      validationErrors.email
+                        ? "border-red-400 focus:border-red-500"
+                        : "border-gray-200 focus:border-teal-deep"
+                    }`}
                     placeholder="your@email.com"
                     style={{ perspective: "1000px" }}
                   />
+                  {validationErrors.email && (
+                    <p className="mt-1 text-xs text-red-500">{validationErrors.email}</p>
+                  )}
                 </div>
 
                 <div className="mb-6">
@@ -219,11 +312,20 @@ export default function Contact() {
                     id="message"
                     required
                     rows={5}
+                    maxLength={MAX_MESSAGE_LENGTH}
                     whileFocus={{ scale: 1.02, rotateX: 2 }}
-                    className="w-full resize-none rounded-lg border border-gray-200 bg-offwhite px-4 py-3 text-sm text-charcoal outline-none transition-colors focus:border-teal-deep focus:ring-2 focus:ring-teal-deep/20"
+                    onInput={handleInput}
+                    className={`w-full resize-none rounded-lg border bg-offwhite px-4 py-3 text-sm text-charcoal outline-none transition-colors focus:ring-2 focus:ring-teal-deep/20 ${
+                      validationErrors.message
+                        ? "border-red-400 focus:border-red-500"
+                        : "border-gray-200 focus:border-teal-deep"
+                    }`}
                     placeholder="Tell me about your project or question..."
                     style={{ perspective: "1000px" }}
                   />
+                  {validationErrors.message && (
+                    <p className="mt-1 text-xs text-red-500">{validationErrors.message}</p>
+                  )}
                 </div>
 
                 {status === "success" && (
@@ -231,6 +333,7 @@ export default function Contact() {
                     initial={{ opacity: 0, y: -10, rotateX: -20 }}
                     animate={{ opacity: 1, y: 0, rotateX: 0 }}
                     className="mb-4 flex items-center gap-2 rounded-lg bg-green-50 p-3 text-sm text-green-700"
+                    role="alert"
                   >
                     <CheckCircle size={16} /> Message sent! Check your email.
                   </motion.div>
@@ -241,6 +344,7 @@ export default function Contact() {
                     initial={{ opacity: 0, y: -10, rotateX: -20 }}
                     animate={{ opacity: 1, y: 0, rotateX: 0 }}
                     className="mb-4 flex items-center gap-2 rounded-lg bg-red-50 p-3 text-sm text-red-700"
+                    role="alert"
                   >
                     <AlertCircle size={16} /> Failed to send. Try again later.
                   </motion.div>

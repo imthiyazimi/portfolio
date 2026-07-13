@@ -20,8 +20,7 @@ export default function Card3D({ children, className = "", glareColor = "#0D7377
   const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["8deg", "-8deg"]);
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-8deg", "8deg"]);
 
-  const glareX = useTransform(mouseXSpring, [-0.5, 0.5], ["0%", "100%"]);
-  const glareY = useTransform(mouseYSpring, [-0.5, 0.5], ["0%", "100%"]);
+  const glareOpacity = useTransform(mouseXSpring, [-0.5, 0, 0.5], [0, 0.1, 0]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return;
@@ -49,10 +48,11 @@ export default function Card3D({ children, className = "", glareColor = "#0D7377
       }}
       className={`relative ${className}`}
     >
-      <div
-        className="absolute inset-0 rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+      <motion.div
+        className="absolute inset-0 rounded-xl pointer-events-none"
         style={{
-          background: `radial-gradient(circle at ${glareX} ${glareY}, ${glareColor}22, transparent 60%)`,
+          opacity: glareOpacity,
+          background: `radial-gradient(circle at 50% 50%, ${glareColor}22, transparent 60%)`,
         }}
       />
       <div style={{ transform: "translateZ(20px)" }} className="relative">
