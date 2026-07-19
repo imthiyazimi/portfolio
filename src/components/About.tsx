@@ -40,43 +40,49 @@ export default function About() {
 
             <AnimatedSection delay={0.1}>
               <p className="body-lg mb-6 text-charcoal/70">
-                I&apos;m not a developer who writes code. I&apos;m the person who makes
-                sure the code that runs in hospitals doesn&apos;t fail.
+                Senior Quality Analyst and Business Analyst with 10+ years in
+                healthcare IT, specializing in Hospital Management System (HMS)
+                quality assurance, requirements engineering, and vendor/product
+                implementation across 150+ global deployments.
               </p>
             </AnimatedSection>
 
             <AnimatedSection delay={0.2}>
               <p className="body-md mb-6 text-charcoal/70">
-                When a doctor pulls up a patient&apos;s records at 3 AM, when a billing
-                desk processes an insurance claim, when a radiologist reads an
-                AI-generated report — I&apos;ve tested every path those systems take to
-                make sure nothing breaks.
+                Proven record of identifying operational bottlenecks and
+                engineering AI-assisted Python automation to eliminate them —
+                including a browser-automation tool with a human-in-the-loop
+                validation control that removed the need for dedicated data-entry
+                staff during bulk master-data creation.
               </p>
             </AnimatedSection>
 
             <AnimatedSection delay={0.3}>
               <p className="body-md mb-6 text-charcoal/70">
-                From IdeaMed serving 150+ hospitals across 20+ countries to WHIS
-                running 7 Kamineni Hospital branches with AI-powered radiology —
-                I&apos;ve been the last line of defense between software bugs and
-                patient safety.
+                Combines deep clinical-workflow domain knowledge with hands-on use
+                of AI coding assistants (GitHub Copilot, Z.ai, OpenCode AI) to
+                accelerate quality delivery. From IdeaMed serving 150+ hospitals
+                across 20+ countries to TrioTree running 7 Kamineni Hospital
+                branches with AI-powered radiology — I&apos;ve been the last line of
+                defense between software bugs and patient safety.
               </p>
             </AnimatedSection>
 
             <AnimatedSection delay={0.4}>
               <p className="body-md mb-6 text-charcoal/70">
-                I also do business analysis, which means I sit with hospital
-                administrators, understand their pain points, and translate
+                I also do business analysis — sitting with hospital
+                administrators, understanding their pain points, and translating
                 &ldquo;we need better patient flow&rdquo; into technical requirements
-                developers can actually build.
+                developers can actually build. End-to-end from requirements
+                gathering to prototypes to client sign-off.
               </p>
             </AnimatedSection>
 
             <AnimatedSection delay={0.5}>
               <p className="body-sm text-slate-600">
-                Based in Hyderabad. Works with hospitals across India and globally.
-                When I&apos;m not testing healthcare systems, I&apos;m learning Python
-                (baby steps, but committed).
+                Based in Hyderabad. Working with hospitals across India and globally.
+                Actively expanding into Blockchain/Web3 and cloud security to stay
+                future-ready in healthcare technology.
               </p>
             </AnimatedSection>
           </div>
@@ -104,8 +110,8 @@ export default function About() {
                     {[
                       { label: "Domain", value: "Healthcare IT" },
                       { label: "Focus", value: "Zero-Defect QA" },
-                      { label: "Approach", value: "Bridge Builder" },
-                      { label: "Style", value: "Calm & Thorough" },
+                      { label: "Automation", value: "AI + Python" },
+                      { label: "Experience", value: "10+ Years" },
                     ].map((trait, i) => (
                       <motion.div
                         key={trait.label}

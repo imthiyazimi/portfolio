@@ -95,7 +95,7 @@ export default function Hero() {
               className="label mb-4 text-coral"
               style={{ perspective: "1000px" }}
             >
-              Healthcare IT Specialist
+              Senior QA & Business Analyst | Healthcare IT | AI Automation
             </motion.p>
 
             <FloatingText intensity={0.5}>
@@ -120,7 +120,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="heading-sm mb-6 font-sans font-light text-slate-600"
             >
-              Quality Analyst & Business Analysis Specialist
+              Senior Quality Analyst & Business Analyst | AI-Driven Test & Process Automation
             </motion.p>
 
             <motion.p

@@ -23,26 +23,28 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://myportfolio-seven-ruby-43.vercel.app"),
-  title: "Mohammed Imthiyaz A | Quality Analyst & Healthcare IT Specialist",
+  title: "Mohammed Imthiyaz A | Senior QA & Business Analyst | Healthcare IT | AI Automation",
   description:
-    "10 years of healthcare IT expertise. Quality Analyst & Business Analysis Specialist ensuring hospital software works flawlessly. 150+ hospitals served globally.",
+    "Senior Quality Analyst & Business Analyst with 10+ years in healthcare IT. Specializing in HMS quality assurance, AI-driven test automation, and vendor implementation across 150+ global deployments. Zero critical production defects.",
   keywords: [
-    "Quality Analyst",
+    "Senior Quality Analyst",
     "Business Analyst",
     "Healthcare IT",
     "Hospital Management System",
     "HMS",
     "QA",
     "Software Testing",
+    "AI Automation",
+    "Python Automation",
     "Hyderabad",
   ],
   icons: {
     icon: "/favicon.svg",
   },
   openGraph: {
-    title: "Mohammed Imthiyaz A | Healthcare IT Specialist",
+    title: "Mohammed Imthiyaz A | Senior QA & Business Analyst | Healthcare IT",
     description:
-      "10 years. 150+ hospitals. Zero critical production defects. The person who makes sure hospital software works flawlessly.",
+      "10+ years. 150+ hospitals. Zero critical production defects. AI-driven automation specialist building tools that eliminate manual bottlenecks.",
     type: "website",
     locale: "en_US",
     siteName: "Mohammed Imthiyaz A | Portfolio",
@@ -50,9 +52,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohammed Imthiyaz A | Healthcare IT Specialist",
+    title: "Mohammed Imthiyaz A | Senior QA & Business Analyst",
     description:
-      "10 years. 150+ hospitals. Zero critical production defects.",
+      "10+ years. 150+ hospitals. Zero critical production defects. AI-driven automation specialist.",
     images: ["/images/profile.png"],
   },
 };
