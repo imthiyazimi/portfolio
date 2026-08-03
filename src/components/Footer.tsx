@@ -26,7 +26,7 @@ export default function Footer() {
               Mohammed Imthiyaz A
             </motion.p>
             <p className="mt-1 text-sm text-gray-400">
-              Quality Analyst & Healthcare IT Specialist
+              Senior Quality Analyst & Healthcare IT Specialist
             </p>
           </div>
 

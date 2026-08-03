@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
@@ -8,6 +8,7 @@ import { NAV_LINKS } from "@/lib/constants";
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const originalOverflowRef = useRef("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,12 +24,13 @@ export default function Navbar() {
 
   useEffect(() => {
     if (isMobileOpen) {
+      originalOverflowRef.current = document.body.style.overflow;
       document.addEventListener("keydown", handleEscape);
       document.body.style.overflow = "hidden";
     }
     return () => {
       document.removeEventListener("keydown", handleEscape);
-      document.body.style.overflow = "";
+      document.body.style.overflow = originalOverflowRef.current;
     };
   }, [isMobileOpen, handleEscape]);
 

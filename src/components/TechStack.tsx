@@ -55,7 +55,7 @@ export default function TechStack() {
                             rotateX: 15,
                             rotateY: 15,
                             z: 20,
-                            backgroundColor: "#0D7377",
+                            backgroundColor: "var(--color-teal-deep)",
                             color: "#ffffff",
                           }}
                           className="rounded-lg bg-offwhite px-3 py-2 text-sm font-medium text-charcoal/70 transition-colors cursor-default"

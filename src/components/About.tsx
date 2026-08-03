@@ -101,7 +101,8 @@ export default function About() {
                     <img
                       src="/images/profile.png"
                       alt="Mohammed Imthiyaz A"
-                      className="aspect-[3/4] w-full object-cover object-center"
+                      className="w-full object-cover object-center"
+                      style={{ aspectRatio: "3/4" }}
                     />
                   </motion.div>
 

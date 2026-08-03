@@ -76,7 +76,7 @@ export default function Education() {
                   </motion.div>
                   <h3 className="heading-sm text-charcoal">Certifications</h3>
                 </div>
-                <div className="space-y-3">
+                <div className="max-h-[400px] space-y-3 overflow-y-auto">
                   {CERTIFICATIONS.map((cert, i) => (
                     <motion.div
                       key={cert.name}

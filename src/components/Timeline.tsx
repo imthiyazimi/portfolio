@@ -104,13 +104,13 @@ export default function Timeline() {
                             >
                               {index % 2 === 0 ? (
                                 <>
-                                  <span className="mt-1.5 hidden h-1.5 w-1.5 shrink-0 rounded-full bg-coral md:block" />
+                                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-coral" />
                                   <span>{highlight}</span>
                                 </>
                               ) : (
                                 <>
                                   <span>{highlight}</span>
-                                  <span className="mt-1.5 hidden h-1.5 w-1.5 shrink-0 rounded-full bg-coral md:block" />
+                                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-coral" />
                                 </>
                               )}
                             </motion.li>

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Shield, Layers, Heart } from "lucide-react";
+import { Shield, Layers, Heart, BrainCircuit } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 import { SERVICES } from "@/lib/constants";
 import TiltCard from "./three/TiltCard";
@@ -11,6 +11,7 @@ const iconMap: Record<string, React.ComponentType<Record<string, unknown>>> = {
   "Quality Analysis": Shield,
   "Business Analysis": Layers,
   "Healthcare Domain": Heart,
+  "AI-Driven Automation": BrainCircuit,
 };
 
 export default function Services() {

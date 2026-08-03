@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDown, Linkedin, Github, Mail } from "lucide-react";
 import { CONTACT } from "@/lib/constants";
@@ -9,6 +9,7 @@ import TiltCard from "./three/TiltCard";
 
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null);
+  const [imgError, setImgError] = useState(false);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -210,7 +211,14 @@ export default function Hero() {
                     src="/images/profile.png"
                     alt="Mohammed Imthiyaz A"
                     className="h-[300px] w-auto object-cover sm:h-[380px] lg:h-[480px]"
+                    onError={() => setImgError(true)}
+                    style={imgError ? { display: "none" } : undefined}
                   />
+                  {imgError && (
+                    <div className="flex h-[300px] w-[250px] items-center justify-center rounded-2xl bg-teal-deep/10 sm:h-[380px] lg:h-[480px]">
+                      <span className="text-6xl">👨‍💻</span>
+                    </div>
+                  )}
                   <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-teal-deep/20 to-transparent" />
                 </motion.div>
 
@@ -274,8 +282,8 @@ export default function Hero() {
             Scroll
           </span>
           <motion.div
-            animate={{ rotateX: [0, 360] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            animate={{ y: [0, 5, 0] }}
+            transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
           >
             <ArrowDown size={16} className="text-slate-600" />
           </motion.div>

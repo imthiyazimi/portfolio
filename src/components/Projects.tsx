@@ -17,6 +17,15 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
           className="relative h-[500px] cursor-pointer"
           style={{ perspective: "1200px" }}
           onClick={() => setIsFlipped(!isFlipped)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              setIsFlipped(!isFlipped);
+            }
+          }}
+          role="button"
+          tabIndex={0}
+          aria-label={`${project.title} - Click to ${isFlipped ? "flip back" : "see details"}`}
         >
           <motion.div
             className="relative h-full w-full"

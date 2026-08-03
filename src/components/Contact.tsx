@@ -10,9 +10,9 @@ import TiltCard from "./three/TiltCard";
 import Parallax from "./three/Parallax";
 import FloatingText from "./three/FloatingText";
 
-const EMAILJS_SERVICE_ID = "service_bb3lnfh";
-const EMAILJS_TEMPLATE_ID = "template_d1jzc39";
-const EMAILJS_PUBLIC_KEY = "JyMjSs_2QGalcH01e";
+const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "";
+const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "";
+const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "";
 
 const MAX_NAME_LENGTH = 100;
 const MAX_EMAIL_LENGTH = 254;
@@ -29,7 +29,7 @@ function sanitizeInput(input: string): string {
 }
 
 function validateEmail(email: string): boolean {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   return emailRegex.test(email) && email.length <= MAX_EMAIL_LENGTH;
 }
 
@@ -44,6 +44,9 @@ export default function Contact() {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
+    if (EMAILJS_PUBLIC_KEY) {
+      emailjs.init(EMAILJS_PUBLIC_KEY);
+    }
     return () => {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
@@ -97,7 +100,8 @@ export default function Contact() {
       setStatus("success");
       formRef.current.reset();
       setValidationErrors({});
-    } catch {
+    } catch (error) {
+      console.error("Email send failed:", error);
       setStatus("error");
     }
 

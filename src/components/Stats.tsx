@@ -17,7 +17,8 @@ function StatItem({
   label: string;
   index: number;
 }) {
-  const { count, ref } = useCountUp(value, 2000);
+  const duration = value <= 10 ? 1500 : value <= 50 ? 2000 : value <= 100 ? 2500 : 3000;
+  const { count, ref } = useCountUp(value, duration);
 
   return (
     <motion.div
