@@ -85,7 +85,6 @@ export const SERVICES = [
       "Multi-Tenant Architecture",
       "Compliance & Audit",
       "AI in Healthcare",
-      "Spark AI Radiology",
       "Paperless Operations",
     ],
     description:
@@ -105,12 +104,11 @@ export const TIMELINE = [
       "Designed & built Python browser-automation tool (with GitHub Copilot) eliminating manual data-entry bottleneck — removing need for dedicated data-entry staff",
       "Engineered human-in-the-loop safeguard for sensitive master-data: automation fills, human confirms creation",
       "Directing major enhancements: EMR, MRD/MCI, Patient Portal, Dashboards, Mobile App, Kiosk",
-      "Implementing Spark AI — AI-based Radiology Reports on Voice & Keywords for paperless operations",
       "Managing enterprise integrations: Tally (Accounting), LIS, PACS, SMS/WhatsApp",
       "Facilitating daily stakeholder & vendor sync meetings via Odoo Ticketing System",
       "Leading KT sessions and mentoring new team members on healthcare domain & QA standards",
     ],
-    tools: ["Python", "MySQL", "Tomcat", "IIS", "GCP", "Odoo", "Spark AI", "GitHub Copilot"],
+    tools: ["Python", "MySQL", "Tomcat", "IIS", "GCP", "Odoo", "GitHub Copilot"],
   },
   {
     period: "Jul 2016 - Mar 2023",
@@ -161,7 +159,6 @@ export const TECH_STACK = {
   "Ticketing & BI": ["Odoo", "GoodDay", "PowerBI", "Data Analytics"],
   Healthcare: [
     "HMS Systems",
-    "Spark AI Radiology",
     "Tally Integration",
     "LIS & PACS",
     "SMS/WhatsApp",
@@ -203,14 +200,14 @@ export const PROJECTS = [
     ],
   },
   {
-    title: "TrioTree HMS + Spark AI",
+    title: "TrioTree HMS",
     subtitle: "Vendor HMS Support & AI Enhancement",
     stats: "7 branches | AI-powered | Paperless Operations",
     description:
-      "Vendor-owned HMS deployed across 7+ Kamineni Hospital locations on shared multi-tenant database. Coordinated vendor-delivered enhancements: EMR, MRD/MCI, Patient Portal, Mobile App, Kiosk. Led QA for Spark AI — AI-based radiology report generation via voice and keyword input. Drove integrations for Tally, LIS, PACS, and SMS/WhatsApp for paperless clinical operations.",
-    tech: ["MySQL", "Tomcat", "IIS", "GCP", "Spark AI"],
+      "Vendor-owned HMS deployed across 7+ Kamineni Hospital locations on shared multi-tenant database. Coordinated vendor-delivered enhancements: EMR, MRD/MCI, Patient Portal, Mobile App, Kiosk. Led QA for AI-powered radiology report generation via voice and keyword input. Drove integrations for Tally, LIS, PACS, and SMS/WhatsApp for paperless clinical operations.",
+    tech: ["MySQL", "Tomcat", "IIS", "GCP"],
     highlights: [
-      "Spark AI: AI-based radiology reports from voice & keywords",
+      "AI-powered radiology reports from voice & keywords",
       "Multi-tenant shared database across 7+ hospital branches",
       "Enterprise integrations: Tally, LIS, PACS, SMS/WhatsApp",
       "EMR, Patient Portal, Mobile App, Kiosk development & QA",
