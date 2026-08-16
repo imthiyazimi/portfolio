@@ -104,13 +104,13 @@ export default function Timeline() {
                             >
                               {index % 2 === 0 ? (
                                 <>
+                                  <span className="flex-1 text-right">{highlight}</span>
                                   <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-coral" />
-                                  <span>{highlight}</span>
                                 </>
                               ) : (
                                 <>
-                                  <span>{highlight}</span>
                                   <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-coral" />
+                                  <span className="flex-1">{highlight}</span>
                                 </>
                               )}
                             </motion.li>

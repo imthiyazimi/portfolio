@@ -265,13 +265,8 @@ export const CERTIFICATIONS = [
     issuer: "Microsoft",
   },
   {
-    name: "UiPath Academy",
-    status: "In Progress",
-    issuer: "UiPath",
-  },
-  {
     name: "Power BI",
-    status: "In Progress",
+    status: "Completed",
     issuer: "Microsoft",
   },
 ];
