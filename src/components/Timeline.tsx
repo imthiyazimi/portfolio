@@ -50,7 +50,7 @@ export default function Timeline() {
                 >
                   {/* Timeline dot with 3D effect */}
                   <motion.div
-                    className="absolute left-8 top-0 z-10 h-4 w-4 -translate-x-1/2 rounded-full border-4 border-coral bg-white md:left-1/2"
+                    className="absolute left-8 top-6 z-10 h-4 w-4 -translate-x-1/2 rounded-full border-4 border-coral bg-white md:left-1/2 md:top-8"
                     animate={{
                       scale: [1, 1.3, 1],
                       rotateX: [0, 360],

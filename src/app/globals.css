@@ -92,7 +92,7 @@
   }
 
   .card {
-    @apply rounded-2xl bg-white p-8 shadow-sm transition-all duration-300;
+    @apply rounded-2xl bg-slate-50 p-8 shadow-sm transition-all duration-300;
   }
 
   .card:hover {
