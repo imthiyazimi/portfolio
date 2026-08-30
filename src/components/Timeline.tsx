@@ -67,7 +67,7 @@ export default function Timeline() {
                   {/* Content card */}
                   <div
                     className={`ml-16 md:ml-0 ${
-                      index % 2 === 0 ? "md:pr-16 md:text-right" : "md:pl-16"
+                      index % 2 === 0 ? "md:pr-16" : "md:pl-16"
                     } md:w-1/2`}
                   >
                     <TiltCard tiltAmount={6} glare={true}>
@@ -89,11 +89,7 @@ export default function Timeline() {
                         </p>
 
                         {/* Highlights */}
-                        <ul
-                          className={`mb-6 space-y-2 ${
-                            index % 2 === 0 ? "md:text-right" : ""
-                          }`}
-                        >
+                        <ul className="mb-6 space-y-2">
                           {item.highlights.map((highlight, i) => (
                             <motion.li
                               key={highlight}
@@ -102,27 +98,14 @@ export default function Timeline() {
                               transition={{ delay: 0.3 + i * 0.1 }}
                               className="body-sm flex items-start gap-2 text-charcoal/60"
                             >
-                              {index % 2 === 0 ? (
-                                <>
-                                  <span className="flex-1 text-right">{highlight}</span>
-                                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-coral" />
-                                </>
-                              ) : (
-                                <>
-                                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-coral" />
-                                  <span className="flex-1">{highlight}</span>
-                                </>
-                              )}
+                              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-coral" />
+                              <span className="flex-1 text-left">{highlight}</span>
                             </motion.li>
                           ))}
                         </ul>
 
                         {/* Tools with 3D hover */}
-                        <div
-                          className={`flex flex-wrap gap-2 ${
-                            index % 2 === 0 ? "md:justify-end" : ""
-                          }`}
-                        >
+                        <div className="flex flex-wrap gap-2">
                           {item.tools.map((tool, i) => (
                             <motion.span
                               key={tool}
