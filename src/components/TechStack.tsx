@@ -45,24 +45,18 @@ export default function TechStack() {
                     </h3>
                     <div className="flex flex-wrap gap-2">
                       {tools.map((tool, i) => (
-                        <motion.span
-                          key={tool}
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          whileInView={{ opacity: 1, scale: 1 }}
-                          transition={{ delay: 0.2 + i * 0.03 }}
-                          whileHover={{
-                            scale: 1.12,
-                            rotateX: 15,
-                            rotateY: 15,
-                            z: 20,
-                            backgroundColor: "var(--color-teal-deep)",
-                            color: "#ffffff",
-                          }}
-                          className="rounded-lg bg-offwhite px-3 py-2 text-sm font-medium text-charcoal/70 transition-colors cursor-default"
-                          style={{ transformStyle: "preserve-3d" }}
-                        >
-                          {tool}
-                        </motion.span>
+                        <TiltCard key={tool} tiltAmount={15} glare={true}>
+                          <motion.span
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.2 + i * 0.03 }}
+                            whileHover={{ scale: 1.1 }}
+                            className="rounded-lg bg-offwhite px-3 py-2 text-sm font-medium text-charcoal/70 transition-colors cursor-default block"
+                            style={{ transformStyle: "preserve-3d" }}
+                          >
+                            {tool}
+                          </motion.span>
+                        </TiltCard>
                       ))}
                     </div>
                   </div>

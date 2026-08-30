@@ -75,20 +75,21 @@ export default function Services() {
                         {service.tagline}
                       </p>
 
-                      {/* Skills with 3D hover */}
+                      {/* Skills with 3D tilt effect */}
                       <div className="mb-6 flex flex-wrap gap-2">
                         {service.skills.map((skill, i) => (
-                          <motion.span
-                            key={skill}
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: 0.3 + i * 0.05 }}
-                            whileHover={{ scale: 1.1, rotateX: 10, z: 10 }}
-                            className="rounded-full bg-offwhite px-3 py-1 text-xs font-medium text-slate-600 cursor-default"
-                            style={{ transformStyle: "preserve-3d" }}
-                          >
-                            {skill}
-                          </motion.span>
+                          <TiltCard key={skill} tiltAmount={15} glare={true}>
+                            <motion.span
+                              initial={{ opacity: 0, scale: 0.8 }}
+                              whileInView={{ opacity: 1, scale: 1 }}
+                              transition={{ delay: 0.3 + i * 0.05 }}
+                              whileHover={{ scale: 1.1 }}
+                              className="rounded-full bg-offwhite px-3 py-1 text-xs font-medium text-slate-600 cursor-default block"
+                              style={{ transformStyle: "preserve-3d" }}
+                            >
+                              {skill}
+                            </motion.span>
+                          </TiltCard>
                         ))}
                       </div>
 
