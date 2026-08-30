@@ -14,8 +14,8 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
     <AnimatedSection key={project.title} delay={index * 0.2}>
       <Parallax speed={0.1 * (index + 1)}>
         <div
-          className="relative h-[500px] cursor-pointer"
-          style={{ perspective: "1200px" }}
+          className="relative cursor-pointer"
+          style={{ perspective: "1200px", minHeight: "420px" }}
           onClick={() => setIsFlipped(!isFlipped)}
           onKeyDown={(e) => {
             if (e.key === "Enter" || e.key === " ") {
@@ -28,50 +28,51 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
           aria-label={`${project.title} - Click to ${isFlipped ? "flip back" : "see details"}`}
         >
           <motion.div
-            className="relative h-full w-full"
+            className="relative w-full"
+            style={{ minHeight: "420px" }}
             animate={{ rotateY: isFlipped ? 180 : 0 }}
             transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
-            style={{ transformStyle: "preserve-3d" }}
+            style={{ transformStyle: "preserve-3d", minHeight: "420px" }}
           >
             {/* Front of card */}
             <div
-              className="absolute inset-0 rounded-2xl bg-white shadow-xl"
+              className="rounded-2xl bg-white shadow-xl"
               style={{ backfaceVisibility: "hidden" }}
             >
               <TiltCard tiltAmount={8} glare={true} className="h-full">
-                <div className="card group flex h-full flex-col">
+                <div className="card group flex h-full flex-col p-6">
                   {/* Header with gradient */}
-                  <div className="-mx-8 -mt-8 mb-6 rounded-t-2xl bg-gradient-to-r from-teal-deep to-teal-700 px-8 py-6">
+                  <div className="-mx-8 -mt-8 mb-4 rounded-t-2xl bg-gradient-to-r from-teal-deep to-teal-700 px-6 py-4">
                     <div className="flex items-start justify-between">
                       <div>
-                        <h3 className="font-serif text-2xl text-white">
+                        <h3 className="font-serif text-xl text-white">
                           {project.title}
                         </h3>
-                        <p className="text-sm text-teal-200">{project.subtitle}</p>
+                        <p className="text-xs text-teal-200">{project.subtitle}</p>
                       </div>
                     </div>
-                    <p className="mt-3 font-mono text-xs text-teal-100">
+                    <p className="mt-2 font-mono text-xs text-teal-100">
                       {project.stats}
                     </p>
                   </div>
 
                   {/* Description */}
-                  <p className="body-sm mb-6 flex-1 text-charcoal/70">
+                  <p className="body-sm mb-4 text-charcoal/70 line-clamp-4">
                     {project.description}
                   </p>
 
                   {/* Highlights */}
-                  <div className="mb-6">
+                  <div className="mb-4">
                     <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-600">
                       Key Achievements
                     </p>
-                    <ul className="space-y-2">
-                      {project.highlights.map((highlight) => (
+                    <ul className="space-y-1.5">
+                      {project.highlights.slice(0, 4).map((highlight) => (
                         <li
                           key={highlight}
-                          className="flex items-start gap-2 text-sm text-charcoal/60"
+                          className="flex items-start gap-2 text-xs text-charcoal/60"
                         >
-                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-coral" />
+                          <span className="mt-1 h-1 w-1 shrink-0 rounded-full bg-coral" />
                           {highlight}
                         </li>
                       ))}
@@ -79,12 +80,12 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
                   </div>
 
                   {/* Tech stack */}
-                  <div className="flex flex-wrap gap-2 border-t border-gray-100 pt-4">
-                    {project.tech.map((tech) => (
+                  <div className="flex flex-wrap gap-1.5 border-t border-gray-100 pt-3">
+                    {project.tech.slice(0, 5).map((tech) => (
                       <motion.span
                         key={tech}
                         whileHover={{ scale: 1.1, rotateX: 10 }}
-                        className="rounded-md bg-offwhite px-2 py-1 font-mono text-xs text-teal-deep"
+                        className="rounded-md bg-offwhite px-2 py-0.5 font-mono text-xs text-teal-deep"
                       >
                         {tech}
                       </motion.span>
@@ -92,7 +93,7 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
                   </div>
 
                   {/* Flip hint */}
-                  <div className="mt-4 text-center">
+                  <div className="mt-2 text-center">
                     <span className="text-xs text-slate-400">Click to flip →</span>
                   </div>
                 </div>
@@ -102,7 +103,7 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
             {/* Back of card */}
             <div
               className="absolute inset-0 rounded-2xl bg-gradient-to-br from-teal-deep to-teal-700 p-8 shadow-xl"
-              style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+              style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)", minHeight: "420px" }}
             >
               <div className="flex h-full flex-col text-white">
                 <h3 className="font-serif text-2xl mb-4">{project.title}</h3>
