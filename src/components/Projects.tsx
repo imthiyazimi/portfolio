@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
-import { PROJECTS } from "@/lib/constants";
+import { PROJECTS, PERSONAL_PROJECTS } from "@/lib/constants";
 import TiltCard from "./three/TiltCard";
 import Parallax from "./three/Parallax";
 
@@ -158,8 +158,9 @@ export default function Projects() {
       </div>
 
       <div className="container-max">
+        {/* Professional Projects */}
         <AnimatedSection>
-          <p className="label mb-4 text-center text-coral">Featured Work</p>
+          <p className="label mb-4 text-center text-coral">Professional Work</p>
           <h2 className="heading-md mb-16 text-center text-charcoal">
             Systems I&apos;ve helped build and ship
           </h2>
@@ -167,6 +168,20 @@ export default function Projects() {
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {PROJECTS.map((project, index) => (
+            <ProjectCard key={project.title} project={project} index={index} />
+          ))}
+        </div>
+
+        {/* Personal Projects */}
+        <AnimatedSection>
+          <p className="label mb-4 mt-24 text-center text-coral">Personal Projects</p>
+          <h2 className="heading-md mb-16 text-center text-charcoal">
+            Self-interest & automation experiments
+          </h2>
+        </AnimatedSection>
+
+        <div className="grid gap-8 md:grid-cols-2">
+          {PERSONAL_PROJECTS.map((project, index) => (
             <ProjectCard key={project.title} project={project} index={index} />
           ))}
         </div>
