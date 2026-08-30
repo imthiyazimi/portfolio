@@ -103,7 +103,20 @@ export default function About() {
                       alt="Mohammed Imthiyaz A"
                       className="w-full object-cover object-center"
                       style={{ aspectRatio: "3/4" }}
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = "none";
+                        const fallback = target.nextElementSibling as HTMLElement;
+                        if (fallback) fallback.style.display = "flex";
+                      }}
                     />
+                    <div
+                      className="flex items-center justify-center bg-gradient-to-br from-teal-deep to-coral text-6xl"
+                      style={{ aspectRatio: "3/4", display: "none" }}
+                      aria-hidden="true"
+                    >
+                      👨‍💻
+                    </div>
                   </motion.div>
 
                   {/* Key traits with 3D cards */}

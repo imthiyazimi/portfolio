@@ -38,7 +38,7 @@ export default function Timeline() {
 
           {TIMELINE.map((item, index) => (
             <AnimatedSection
-              key={item.company}
+              key={`${item.company}-${item.period}`}
               delay={index * 0.2}
               direction={index % 2 === 0 ? "left" : "right"}
             >
@@ -92,7 +92,7 @@ export default function Timeline() {
                         <ul className="mb-6 space-y-2">
                           {item.highlights.map((highlight, i) => (
                             <motion.li
-                              key={highlight}
+                              key={`${item.company}-highlight-${i}`}
                               initial={{ opacity: 0, x: index % 2 === 0 ? 20 : -20 }}
                               whileInView={{ opacity: 1, x: 0 }}
                               transition={{ delay: 0.3 + i * 0.1 }}
@@ -108,7 +108,7 @@ export default function Timeline() {
                         <div className="flex flex-wrap gap-2">
                           {item.tools.map((tool, i) => (
                             <motion.span
-                              key={tool}
+                              key={`${item.company}-tool-${i}`}
                               initial={{ opacity: 0, scale: 0.8 }}
                               whileInView={{ opacity: 1, scale: 1 }}
                               transition={{ delay: 0.5 + i * 0.05 }}

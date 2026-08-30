@@ -1,7 +1,7 @@
 "use client";
 
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Environment, Stars, Float, Text } from "@react-three/drei";
+import { OrbitControls, Environment, Stars, Float } from "@react-three/drei";
 import FloatingShapes from "./FloatingShapes";
 import ParticleField from "./ParticleField";
 import MouseFollower from "./MouseFollower";

@@ -43,6 +43,9 @@ export default function Contact() {
   }>({});
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Prevent Tailwind from purging dynamic color classes
+  const _colorClasses = "text-teal-deep text-coral text-gold bg-teal-deep/10 bg-coral/10 bg-gold/10";
+
   useEffect(() => {
     if (EMAILJS_PUBLIC_KEY) {
       emailjs.init(EMAILJS_PUBLIC_KEY);

@@ -29,10 +29,9 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
         >
           <motion.div
             className="relative w-full"
-            style={{ minHeight: "420px" }}
+            style={{ transformStyle: "preserve-3d", minHeight: "420px" }}
             animate={{ rotateY: isFlipped ? 180 : 0 }}
             transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
-            style={{ transformStyle: "preserve-3d", minHeight: "420px" }}
           >
             {/* Front of card */}
             <div
