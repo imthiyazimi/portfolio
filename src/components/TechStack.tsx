@@ -51,7 +51,7 @@ export default function TechStack() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.2 + i * 0.03 }}
                             whileHover={{ scale: 1.1 }}
-                            className="rounded-lg bg-offwhite px-3 py-2 text-sm font-medium text-charcoal/70 transition-colors cursor-default block"
+                            className="rounded-lg bg-gradient-to-r from-teal-deep/10 to-gold/10 px-3 py-2 text-sm font-medium text-charcoal/80 transition-colors cursor-default block border border-teal-deep/20"
                             style={{ transformStyle: "preserve-3d" }}
                           >
                             {tool}

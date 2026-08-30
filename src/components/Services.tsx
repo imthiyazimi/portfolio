@@ -84,7 +84,7 @@ export default function Services() {
                               whileInView={{ opacity: 1, scale: 1 }}
                               transition={{ delay: 0.3 + i * 0.05 }}
                               whileHover={{ scale: 1.1 }}
-                              className="rounded-full bg-offwhite px-3 py-1 text-xs font-medium text-slate-600 cursor-default block"
+                              className="rounded-full bg-gradient-to-r from-teal-deep/10 to-coral/10 px-3 py-1 text-xs font-medium text-charcoal/80 cursor-default block border border-teal-deep/20"
                               style={{ transformStyle: "preserve-3d" }}
                             >
                               {skill}
