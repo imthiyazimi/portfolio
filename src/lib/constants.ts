@@ -213,6 +213,21 @@ export const PROJECTS = [
       "10+ modules, 100+ screens, 50+ reports for Indian healthcare standards",
     ],
   },
+  {
+    title: "100% Free YouTube Automation Pipeline",
+    subtitle: "RSS Feed → Voice → Video → Publish | Zero Cost",
+    stats: "100% Free | RSS → MP3 → Video → YouTube | Fully Automated",
+    description:
+      "Built a fully automated content pipeline that runs entirely on GitHub Actions free tier. Fetches trending news from RSS feeds, converts articles to voice using EdgeTTS, generates visuals with AI, assembles videos with FFmpeg, and publishes to YouTube — all without spending a single rupee.",
+    tech: ["Python", "GitHub Actions", "EdgeTTS", "FFmpeg", "RSS Feeds"],
+    highlights: [
+      "100% free infrastructure — runs on GitHub Actions free tier",
+      "RSS news feeds → article extraction → script generation",
+      "Text-to-speech MP3 creation using Microsoft Edge neural voices",
+      "AI-generated visuals synced with audio timeline",
+      "Auto-publish to YouTube with title, description & tags",
+    ],
+  },
 ];
 
 export const PROCESS_STEPS = [
