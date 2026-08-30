@@ -13,8 +13,6 @@ export const STATS = [
   { value: 0, suffix: "", label: "Critical Production Defects" },
   { value: 20, suffix: "+", label: "Modules Tested & Delivered" },
   { value: 300, suffix: "+", label: "Screens Managed" },
-  { value: 3, suffix: "", label: "Books Published" },
-  { value: 3, suffix: "", label: "YouTube Channels Automated" },
 ];
 
 export const SERVICES = [
@@ -139,7 +137,6 @@ export const TECH_STACK = {
     "AI Master Data Creation",
     "Human-in-the-Loop Validation",
     "GitHub Actions CI/CD",
-    "YouTube Automation",
   ],
   Databases: ["MySQL", "SQL Queries", "SQL Server Basics"],
   Servers: ["Tomcat Configuration", "IIS Basic Operations", "Windows Server Basic"],
@@ -167,14 +164,6 @@ export const TECH_STACK = {
     "QR Code Generation",
   ],
   "Office & Collab": ["MS Office Suite", "Email & Communication Tools"],
-  "Content & Publishing": [
-    "Technical Writing",
-    "Amazon KDP",
-    "Gumroad",
-    "Google Play Books",
-    "EdgeTTS",
-    "FFmpeg",
-  ],
   Interests: ["Blockchain", "Web3", "AI in Healthcare", "Cloud Security"],
 };
 
@@ -222,36 +211,6 @@ export const PROJECTS = [
       "Enterprise integrations: Tally, LIS, PACS, SMS/WhatsApp",
       "EMR, Patient Portal, Mobile App, Kiosk development & QA",
       "10+ modules, 100+ screens, 50+ reports for Indian healthcare standards",
-    ],
-  },
-  {
-    title: "Published Author — Practical AI in Healthcare",
-    subtitle: "3-Book Series | Gumroad, KDP, Google Play",
-    stats: "3 books published | Multi-platform distribution | AI + Healthcare focus",
-    description:
-      "Authored a 3-book series on AI adoption in healthcare — covering do's and don'ts, patient data safeguarding, and hospital implementation roadmaps. Published across Gumroad (free + paid), Amazon KDP, and Google Play Books. Each book includes full manuscript, professional cover design, launch kits with social media content, and SEO-optimized metadata.",
-    tech: ["Technical Writing", "AI in Healthcare", "Gumroad", "Amazon KDP", "Google Play"],
-    highlights: [
-      "Book 1: AI in Healthcare — The Do's and Don'ts (free on Gumroad)",
-      "Book 2: Stop AI From Leaking Patient Data ($4.99, Gumroad + KDP)",
-      "Book 3: Healthy AI Implementation Roadmap for Hospitals ($7.99)",
-      "Full publish kits: covers, SEO metadata, launch content per book",
-      "Multi-platform distribution: Gumroad, Amazon KDP, Google Play Books",
-    ],
-  },
-  {
-    title: "YouTube Content Automation Pipeline",
-    subtitle: "End-to-End Automated Video Production",
-    stats: "3 channels | Script → Video → Upload | Zero manual effort",
-    description:
-      "Built a fully automated content pipeline that generates trending-topic scripts via Gemini AI, converts them to voiceovers using EdgeTTS, creates visuals with Pollinations/SDXL, assembles videos with FFmpeg, and uploads to YouTube — all orchestrated via GitHub Actions on a daily schedule. Includes quality validation gates, multi-channel support, and Telegram notifications.",
-    tech: ["Python", "GitHub Actions", "Gemini AI", "EdgeTTS", "FFmpeg", "Pollinations"],
-    highlights: [
-      "Automated daily content generation across multiple YouTube channels",
-      "AI-powered scriptwriting using Google Gemini (free tier)",
-      "Multi-voice TTS with Microsoft Edge neural voices",
-      "Quality validation gates: duration, resolution, audio checks",
-      "Zero-cost infrastructure: runs entirely on GitHub Actions free tier",
     ],
   },
 ];
