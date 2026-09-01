@@ -218,15 +218,16 @@ export const PROJECTS = [
     subtitle: "Internal Reporting Server | Kamineni Hospitals",
     stats: "15-min auto-refresh | SQL-driven | Android TV Display",
     description:
-      "Developed an internal reporting server using MetaBase to bring transparency with patients regarding insurance and claim status. Since MetaBase is a lightweight reporting tool, we ran it on a local normal computer — no dedicated server needed. SQL queries pull live claim data from the database. Used MetaBase's built-in publishing facility to open reports in full-screen mode on Android TVs placed across hospital departments. Configured auto-refresh every 15 minutes so patients always see the latest claim status. Patients can now check their claim status themselves without waiting in the insurance department — significantly reduced patient waiting time and staff inquiry hours.",
+      "Observed a key pain point at Kamineni Hospitals: patient attenders were spending excessive time in the insurance department, repeatedly inquiring about claim status — causing long wait times, staff overload, and poor patient experience. Analyzed the root cause: lack of real-time visibility into claim progress. Designed and deployed a solution using MetaBase — a lightweight reporting tool running on a local computer (no dedicated server). SQL queries pull live claim data from the database. Used MetaBase's built-in publishing facility to open reports in full-screen mode on Android TVs placed across hospital departments. Configured auto-refresh every 15 minutes so patients always see the latest claim status. Result: patients now check claim status themselves on Android TVs — eliminating queues, reducing staff inquiry hours, and significantly improving patient satisfaction.",
     tech: ["MetaBase", "SQL", "MySQL", "Android TV", "Data Visualization"],
     highlights: [
-      "Ran on a local computer — lightweight, no dedicated server required",
-      "Auto-refresh every 15 minutes for real-time claim status updates",
+      "Identified pain point: patient attenders queuing at insurance desks for claim status updates",
+      "Root cause analysis: no real-time visibility into claim progress for patients",
+      "Solution: MetaBase reporting server on a local computer — lightweight, no dedicated server",
       "SQL queries pulling live patient insurance & claim data",
       "MetaBase publishing facility — full-screen mode on Android TVs",
-      "Patients self-service — no more waiting in insurance queues",
-      "Reduced staff hours spent on repetitive claim status inquiries",
+      "Auto-refresh every 15 minutes for real-time updates",
+      "Result: patients self-service, reduced queues, improved satisfaction",
     ],
   },
 ];
