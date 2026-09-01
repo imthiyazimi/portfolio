@@ -213,6 +213,21 @@ export const PROJECTS = [
       "10+ modules, 100+ screens, 50+ reports for Indian healthcare standards",
     ],
   },
+  {
+    title: "MetaBase Reporting Tool",
+    subtitle: "Internal Reporting Server | Kamineni Hospitals",
+    stats: "15-min auto-refresh | SQL-driven | Android TV Display",
+    description:
+      "Developed an internal reporting server using MetaBase to bring transparency with patients regarding insurance and claim status. Selected MetaBase specifically for its auto-refresh functionality, configured to refresh every 15 minutes. SQL queries pull live claim data from the database and display it in tabular form on Android TVs placed in the hospital. Patients can now check their claim status themselves without waiting in the insurance department — significantly reduced patient waiting time and staff inquiry hours.",
+    tech: ["MetaBase", "SQL", "MySQL", "Android TV", "Data Visualization"],
+    highlights: [
+      "Auto-refresh every 15 minutes for real-time claim status updates",
+      "SQL queries pulling live patient insurance & claim data",
+      "Tabular display on Android TVs across hospital departments",
+      "Patients self-service — no more waiting in insurance queues",
+      "Reduced staff hours spent on repetitive claim status inquiries",
+    ],
+  },
 ];
 
 export const PERSONAL_PROJECTS = [
