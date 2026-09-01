@@ -218,12 +218,13 @@ export const PROJECTS = [
     subtitle: "Internal Reporting Server | Kamineni Hospitals",
     stats: "15-min auto-refresh | SQL-driven | Android TV Display",
     description:
-      "Developed an internal reporting server using MetaBase to bring transparency with patients regarding insurance and claim status. Selected MetaBase specifically for its auto-refresh functionality, configured to refresh every 15 minutes. SQL queries pull live claim data from the database and display it in tabular form on Android TVs placed in the hospital. Patients can now check their claim status themselves without waiting in the insurance department — significantly reduced patient waiting time and staff inquiry hours.",
+      "Developed an internal reporting server using MetaBase to bring transparency with patients regarding insurance and claim status. Since MetaBase is a lightweight reporting tool, we ran it on a local normal computer — no dedicated server needed. SQL queries pull live claim data from the database. Used MetaBase's built-in publishing facility to open reports in full-screen mode on Android TVs placed across hospital departments. Configured auto-refresh every 15 minutes so patients always see the latest claim status. Patients can now check their claim status themselves without waiting in the insurance department — significantly reduced patient waiting time and staff inquiry hours.",
     tech: ["MetaBase", "SQL", "MySQL", "Android TV", "Data Visualization"],
     highlights: [
+      "Ran on a local computer — lightweight, no dedicated server required",
       "Auto-refresh every 15 minutes for real-time claim status updates",
       "SQL queries pulling live patient insurance & claim data",
-      "Tabular display on Android TVs across hospital departments",
+      "MetaBase publishing facility — full-screen mode on Android TVs",
       "Patients self-service — no more waiting in insurance queues",
       "Reduced staff hours spent on repetitive claim status inquiries",
     ],
