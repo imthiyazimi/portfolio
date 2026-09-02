@@ -230,6 +230,21 @@ export const PROJECTS = [
       "Result: patients self-service, reduced queues, improved satisfaction",
     ],
   },
+  {
+    title: "Power BI Report Server",
+    subtitle: "Enterprise Reporting Infrastructure | Kamineni Hospitals",
+    stats: "On-premise | SQL Server | Interactive Dashboards",
+    description:
+      "Implemented Power BI Report Server at Kamineni Hospitals for enterprise-grade on-premise reporting. Connected to hospital database via SQL Server DirectQuery for real-time data access. Built interactive dashboards for departments — patient flow, revenue analytics, bed occupancy, and operational KPIs. Enabled hospital management to make data-driven decisions with drill-through capabilities and scheduled data refresh.",
+    tech: ["Power BI", "SQL Server", "DAX", "Power Query", "On-Premise Gateway"],
+    highlights: [
+      "Deployed on-premise Power BI Report Server for secure hospital data reporting",
+      "SQL Server DirectQuery for real-time patient and operational data",
+      "Interactive dashboards: patient flow, revenue, bed occupancy, KPIs",
+      "Drill-through reports for department-level analysis",
+      "Scheduled data refresh and row-level security implementation",
+    ],
+  },
 ];
 
 export const PERSONAL_PROJECTS = [
