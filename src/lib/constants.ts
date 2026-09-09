@@ -88,6 +88,20 @@ export const SERVICES = [
     description:
       "Healthcare isn't just another industry vertical. It has its own language, its own regulations, and zero tolerance for downtime. I know both worlds — from appointment booking to AI-powered radiology reports. Vendor coordination, compliance, and clinical workflow optimization.",
   },
+  {
+    title: "Community Tech Delivery",
+    tagline: "Bringing technology to non-technical local people — for free.",
+    skills: [
+      "Free Website Design",
+      "Requirements Survey",
+      "Local Vendor Support",
+      "Responsive Web Design",
+      "Client Requirement Analysis",
+      "Non-Technical Client Communication",
+    ],
+    description:
+      "I build websites for local shop vendors in Hyderabad — completely free. I survey their business needs, understand their requirements, and deliver ready-to-use websites. Goal: bridge the digital gap for small businesses that can't afford web developers. Jabilicloud Kitchen is one such project where I delivered a cloud kitchen website from scratch.",
+  },
 ];
 
 export const TIMELINE = [
@@ -164,6 +178,7 @@ export const TECH_STACK = {
     "QR Code Generation",
   ],
   "Office & Collab": ["MS Office Suite", "Email & Communication Tools"],
+  "Community Impact": ["Free Web Design", "Local Vendor Support", "Non-Technical Client Delivery"],
   Interests: ["Blockchain", "Web3", "AI in Healthcare", "Cloud Security"],
 };
 
@@ -260,6 +275,36 @@ export const PERSONAL_PROJECTS = [
       "Book 2: Stop AI From Leaking Patient Data",
       "Book 3: Healthy AI Implementation Roadmap for Hospitals",
       "Multi-platform distribution: Gumroad, Amazon KDP, Google Play Books",
+    ],
+  },
+  {
+    title: "Free Websites for Local Vendors",
+    subtitle: "Delivering Technology to Non-Technical Local People",
+    stats: "100% Free | Community Service | Real Businesses",
+    description:
+      "Built websites for local shop vendors in Hyderabad — completely free of charge. Surveyed their business needs, understood their requirements, designed and delivered websites tailored to their products and services. Goal: bridge the digital gap for small businesses that can't afford web developers.",
+    tech: ["Web Design", "HTML", "CSS", "JavaScript", "Responsive Design"],
+    highlights: [
+      "Surveyed local vendors to understand their business and customer needs",
+      "Designed and built websites for non-technical shop owners — 100% free",
+      "Delivered ready-to-use websites with product/service listings and contact info",
+      "Empowered small businesses to establish an online presence",
+      "Achieved: delivered technology to non-technical local people",
+    ],
+  },
+  {
+    title: "Jabilicloud Kitchen",
+    subtitle: "Cloud Kitchen Website | Local Vendor Project",
+    stats: "Free Service | Client Requirement Delivery | Live Website",
+    description:
+      "Built a website for Jabilicloud Kitchen — a local cloud kitchen vendor. Conducted a requirements survey, understood their menu, ordering process, and delivery model. Designed and delivered a clean, functional website showcasing their kitchen offerings. Part of the free local vendor initiative to bring technology to small food businesses.",
+    tech: ["Web Design", "HTML", "CSS", "JavaScript", "Responsive Design"],
+    highlights: [
+      "Conducted requirements survey with the cloud kitchen owner",
+      "Designed website showcasing menu, pricing, and ordering details",
+      "Delivered a responsive, mobile-friendly website — free of cost",
+      "Client satisfaction: vendor loved the final website and used it for their business",
+      "Part of initiative to deliver technology to non-technical local people",
     ],
   },
   {
