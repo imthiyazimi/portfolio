@@ -336,6 +336,21 @@ export const PERSONAL_PROJECTS = [
       "Deployed on Vercel — live at healthcare-updates.vercel.app",
     ],
   },
+  {
+    title: "ToolVerse — AI Tools Directory",
+    subtitle: "Free vs Paid | Alternatives | Rankings | 12 Categories",
+    stats: "100+ Tools | 12 Categories | Free Alternatives",
+    description:
+      "A comprehensive AI tools directory helping users find the right AI tool for every task. Compare free vs paid, discover free alternatives, see ratings and rankings across 12 categories including Writing, Image, Video, Code, Audio, and more.",
+    tech: ["HTML", "CSS", "JavaScript", "AI Tools Research", "UI/UX Design"],
+    highlights: [
+      "100+ AI tools catalogued across 12 categories with search and filter",
+      "Free vs Paid badges with pricing info for every tool",
+      "Free alternatives listed for every paid tool",
+      "Ratings and rankings with star scores",
+      "Deployed on Vercel and GitHub Pages",
+    ],
+  },
 ];
 
 export const PROCESS_STEPS = [
