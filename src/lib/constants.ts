@@ -321,6 +321,21 @@ export const PERSONAL_PROJECTS = [
       "Auto-publish to YouTube with title, description & tags",
     ],
   },
+  {
+    title: "Healthcare Updates India",
+    subtitle: "Real-Time Healthcare News Portal | 7 Categories",
+    stats: "166+ Articles | 7 Categories | Hourly Updates",
+    description:
+      "A comprehensive healthcare news aggregator covering Telangana, MCI/NMC, regulations, hospitals, launches, central govt, and healthcare technology. Auto-updates every hour via GitHub Actions, deployed on Vercel with a 7-day rolling archive and date filter UI.",
+    tech: ["Python", "GitHub Actions", "Vercel", "RSS Feeds", "Google News API", "Healthcare Tech"],
+    highlights: [
+      "7 categories: Telangana, MCI/NMC, Rules & Regulations, Hospitals, Launches, Central Govt, Healthcare Tech",
+      "Healthcare Tech Boom section: AI/ML, MedTech, Telehealth, Genomics, Robotics, Startups",
+      "Hourly auto-updates via GitHub Actions — zero manual intervention",
+      "7-day rolling archive with date filter UI (Today, Yesterday, Last 7 Days, Custom)",
+      "Deployed on Vercel — live at healthcare-updates.vercel.app",
+    ],
+  },
 ];
 
 export const PROCESS_STEPS = [
