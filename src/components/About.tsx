@@ -70,12 +70,13 @@ export default function About() {
 
             <AnimatedSection delay={0.35}>
               <p className="body-md mb-6 text-charcoal/70">
-                At Kamineni Hospital — a Medical College hospital — I handle NMC
-                &amp; MCI compliance visits that happen on-premise. When
-                regulators demand data, I retrieve it from system reports; if
-                reports are missing, I query the backend directly and deliver
-                what&apos;s needed. I also manage the supply chain module since
-                Kamineni supplies other local hospitals.
+                At Kamineni Hospitals Medical College &amp; Research Institute, I
+                handle NMC &amp; MCI compliance visits that happen on-premise. When
+                regulators demand data, I retrieve it from ready-made reports — but
+                if those reports don&apos;t exist or don&apos;t match the required
+                format, I write backend SQL queries to pull customized data. I also
+                manage the Bishak supply module — a separate facility in Kamineni&apos;s
+                network that supplies to other hospitals.
               </p>
             </AnimatedSection>
 
