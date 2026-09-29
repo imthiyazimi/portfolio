@@ -68,6 +68,17 @@ export default function About() {
               </p>
             </AnimatedSection>
 
+            <AnimatedSection delay={0.35}>
+              <p className="body-md mb-6 text-charcoal/70">
+                At Kamineni Hospital — a Medical College hospital — I handle NMC
+                &amp; MCI compliance visits that happen on-premise. When
+                regulators demand data, I retrieve it from system reports; if
+                reports are missing, I query the backend directly and deliver
+                what&apos;s needed. I also manage the supply chain module since
+                Kamineni supplies other local hospitals.
+              </p>
+            </AnimatedSection>
+
             <AnimatedSection delay={0.4}>
               <p className="body-md mb-6 text-charcoal/70">
                 I also do business analysis — sitting with hospital

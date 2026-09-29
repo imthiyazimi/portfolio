@@ -77,6 +77,9 @@ export const SERVICES = [
     skills: [
       "Hospital Management Systems",
       "EMR / MRD / MCI",
+      "NMC & MCI Compliance Visits",
+      "Regulatory Data Retrieval & Submission",
+      "Supply Chain / Vendor Module",
       "Patient Information Systems",
       "Clinical Workflows",
       "Healthcare Billing",
@@ -86,7 +89,7 @@ export const SERVICES = [
       "Paperless Operations",
     ],
     description:
-      "Healthcare isn't just another industry vertical. It has its own language, its own regulations, and zero tolerance for downtime. I know both worlds — from appointment booking to AI-powered radiology reports. Vendor coordination, compliance, and clinical workflow optimization.",
+      "Healthcare isn't just another industry vertical. It has its own language, its own regulations, and zero tolerance for downtime. I know both worlds — from appointment booking to AI-powered radiology reports. NMC/MCI inspection facilitation, regulatory data retrieval & submission, supply chain management for vendor operations, compliance, and clinical workflow optimization.",
   },
   {
     title: "Community Tech Delivery",
@@ -113,6 +116,9 @@ export const TIMELINE = [
     duration: "3+ Years",
     highlights: [
       "Leading QA & BA for TrioTree HMS across 7+ Kamineni Hospital locations on shared multi-tenant database",
+      "NMC / MCI compliance facilitation: as a Medical College hospital, we host frequent NMC & MCI departmental inspections on-premise — retrieve and submit required data from system reports to regulatory authorities on demand",
+      "When reports are unavailable in the system, build backend SQL queries to pull the required data and deliver it to inspectors — ensuring compliance readiness at all times",
+      "Managing supply chain / supplier module for Kamineni Hospital acting as a supplier & vendor to other local hospitals — handling procurement, inventory & supply chain operations",
       "Designed & built Python browser-automation tool (with GitHub Copilot) eliminating manual data-entry bottleneck — removing need for dedicated data-entry staff",
       "Engineered human-in-the-loop safeguard for sensitive master-data: automation fills, human confirms creation",
       "Directing major enhancements: EMR, MRD/MCI, Patient Portal, Dashboards, Mobile App, Kiosk",
@@ -176,6 +182,9 @@ export const TECH_STACK = {
     "LIS & PACS",
     "SMS/WhatsApp",
     "QR Code Generation",
+    "NMC / MCI Compliance",
+    "Supply Chain Management",
+    "Regulatory Reporting",
   ],
   "Office & Collab": ["MS Office Suite", "Email & Communication Tools"],
   "Community Impact": ["Free Web Design", "Local Vendor Support", "Non-Technical Client Delivery"],
@@ -226,6 +235,21 @@ export const PROJECTS = [
       "Enterprise integrations: Tally, LIS, PACS, SMS/WhatsApp",
       "EMR, Patient Portal, Mobile App, Kiosk development & QA",
       "10+ modules, 100+ screens, 50+ reports for Indian healthcare standards",
+    ],
+  },
+  {
+    title: "NMC / MCI Compliance & Supply Chain Management",
+    subtitle: "Regulatory Facilitation & Vendor Operations | Kamineni Hospitals",
+    stats: "Medical College Hospital | NMC/MCI Visits | Supplier Module",
+    description:
+      "Kamineni Hospital is a Medical College hospital that hosts frequent departmental inspections from the National Medical Commission (NMC) and Medical Council of India (MCI) on-premise. Whenever authorities demand data submission, I retrieve the required data from system reports. If reports are unavailable, I build backend SQL queries to pull the necessary data and deliver it to the inspectors — facilitating compliance requirements end to end. Additionally, Kamineni Hospital acts as a supplier and vendor to other local hospitals, and I manage the supply chain / supplier module covering procurement, inventory, and vendor operations.",
+    tech: ["MySQL", "SQL Queries", "Regulatory Compliance", "Supply Chain", "Vendor Management"],
+    highlights: [
+      "Facilitate NMC & MCI inspection visits — retrieve and submit compliance data to regulatory authorities",
+      "Build backend SQL queries when system reports are unavailable to meet inspector demands",
+      "Manage supply chain / supplier module for inter-hospital vendor & procurement operations",
+      "Ensure zero compliance downtime during unannounced regulatory audits",
+      "Coordinate data requirements between clinical departments and external authorities",
     ],
   },
   {
@@ -333,7 +357,7 @@ export const PERSONAL_PROJECTS = [
       "Healthcare Tech Boom section: AI/ML, MedTech, Telehealth, Genomics, Robotics, Startups",
       "Hourly auto-updates via GitHub Actions — zero manual intervention",
       "7-day rolling archive with date filter UI (Today, Yesterday, Last 7 Days, Custom)",
-      "Deployed on Vercel — live at healthcare-updates.vercel.app",
+      "Deployed on Vercel — live at healthcare-updates-sooty.vercel.app",
     ],
   },
   {
